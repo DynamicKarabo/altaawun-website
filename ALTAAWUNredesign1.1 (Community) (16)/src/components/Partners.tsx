@@ -15,7 +15,7 @@ export function Partners() {
     { name: 'Taxleaders', image: 'https://i.postimg.cc/G3xQNrYL/LOGO-VARIANTS-01-1536x241.webp'},
     { name: 'Ashraful Aid', image: 'https://i.postimg.cc/DfBDtqkr/ashlogo2.jpg'},
     { name: 'Rainbow EDC', image: 'https://i.postimg.cc/N0ScWSyX/Whats-App-Image-2025-11-12-at-13-25-36.jpg'},
-    { name: 'Coat Of Arms', image: 'https://i.postimg.cc/N0ScWSyX/Whats-App-Image-2025-11-12-at-13-25-36.jpg'},
+    { name: 'Coat Of Arms', image: 'https://i.postimg.cc/wjk3YqHs/Coat-of-arms-of-South-Africa-(heraldic).jpg'},
   ];
 
   return (

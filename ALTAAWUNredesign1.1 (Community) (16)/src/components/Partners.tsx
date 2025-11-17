@@ -8,7 +8,7 @@ export function Partners() {
     { name: 'PPC', image: 'https://i.postimg.cc/Vky3RzPx/ppc-stacked-logo.jpg' },
     { name: 'MICTSETA', image: 'https://i.postimg.cc/fLKz4JDd/mict-logo.png' },
     { name: 'Shoprite', image: 'https://i.postimg.cc/1tzG1Zss/a7ba129777f86a6274ee6b336cb3a469.png' },
-    { name: 'INHANCE', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400' },
+    { name: 'INHANCE', image: 'https://i.postimg.cc/fLZHtbmZ/inhancelogo.jpg' },
     { name: 'The Gauteng Province', image: 'https://i.postimg.cc/c4WzgX7C/Government-of-Gauteng-logo-svg.png' },
     { name: 'AWQAF SA', image: 'https://i.postimg.cc/jdqbVgJ6/awqaflogo.jpg' },
     { name: 'Africa Muslims Agency', image: 'https://i.postimg.cc/RZBv07hJ/ama-logo.png' },

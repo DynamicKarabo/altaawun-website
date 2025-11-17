@@ -13,7 +13,7 @@ export function Partners() {
     { name: 'AWQAF SA', image: 'https://i.postimg.cc/jdqbVgJ6/awqaflogo.jpg' },
     { name: 'Islamic Relief South Africa', image: 'https://i.postimg.cc/L47NMv5p/irza-logo.jpg' },
     { name: 'Taxleaders', image: 'https://i.postimg.cc/G3xQNrYL/LOGO-VARIANTS-01-1536x241.webp'},
-    { name: 'Ashraful Aid', image: 'https://i.postimg.cc/BvmQ8j10/ashlogo.png'},
+    { name: 'Ashraful Aid', image: 'https://i.postimg.cc/DfBDtqkr/ashlogo2.jpg'},
   ];
 
   return (

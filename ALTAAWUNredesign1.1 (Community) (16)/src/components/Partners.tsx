@@ -3,15 +3,16 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Partners() {
   const partners = [
-    { name: 'Boxer', image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400' },
-    { name: 'Proudly South Africa', image: 'https://ibb.co/XM86FgV' },
-    { name: 'PPC', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400' },
-    { name: 'MICTSETA', image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400' },
-    { name: 'Shoprite', image: 'https://ibb.co/VhHrRL7' },
+    { name: 'Boxer', image: 'https://i.postimg.cc/Jzmp00LG/id-Ffe3r37x-1763378716996.png' },
+    { name: 'Proudly South Africa', image: 'https://i.postimg.cc/7hdMNtFn/pngegg.png' },
+    { name: 'PPC', image: 'https://i.postimg.cc/Vky3RzPx/ppc-stacked-logo.jpg' },
+    { name: 'MICTSETA', image: 'https://i.postimg.cc/fLKz4JDd/mict-logo.png' },
+    { name: 'Shoprite', image: 'https://i.postimg.cc/1tzG1Zss/a7ba129777f86a6274ee6b336cb3a469.png' },
     { name: 'INHANCE', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400' },
-    { name: 'The Gauteng Province', image: 'https://images.unsplash.com/photo-1575390730715-9716b5579d09?w=400' },
-    { name: 'AWQAF SA', image: 'https://ibb.co/yFzw6m5M' },
-    { name: 'Africa Muslims Agency', image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400' }
+    { name: 'The Gauteng Province', image: 'https://i.postimg.cc/c4WzgX7C/Government-of-Gauteng-logo-svg.png' },
+    { name: 'AWQAF SA', image: 'https://i.postimg.cc/jdqbVgJ6/awqaflogo.jpg' },
+    { name: 'Africa Muslims Agency', image: 'https://i.postimg.cc/RZBv07hJ/ama-logo.png' },
+    { name: 'Taxleaders', image: 'https://i.postimg.cc/G3xQNrYL/LOGO-VARIANTS-01-1536x241.webp'},
   ];
 
   return (

@@ -4,13 +4,13 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 export function Partners() {
   const partners = [
     { name: 'Boxer', image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=400' },
-    { name: 'Proudly South Africa', image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400' },
+    { name: 'Proudly South Africa', image: 'https://ibb.co/XM86FgV' },
     { name: 'PPC', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400' },
     { name: 'MICTSETA', image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400' },
-    { name: 'Shoprite', image: 'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=400' },
+    { name: 'Shoprite', image: 'https://ibb.co/VhHrRL7' },
     { name: 'INHANCE', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400' },
     { name: 'The Gauteng Province', image: 'https://images.unsplash.com/photo-1575390730715-9716b5579d09?w=400' },
-    { name: 'AWQAF SA', image: 'https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=400' },
+    { name: 'AWQAF SA', image: 'https://ibb.co/yFzw6m5M' },
     { name: 'Africa Muslims Agency', image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400' }
   ];
 

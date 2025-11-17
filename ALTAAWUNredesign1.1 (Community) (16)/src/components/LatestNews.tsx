@@ -1,0 +1,89 @@
+import { Calendar, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from './ui/card';
+import { Button } from './ui/button';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+
+type Page = 'home' | 'about' | 'impact' | 'values' | 'get-involved' | 'donate' | 'ways-to-give';
+
+interface LatestNewsProps {
+  onNavigate: (page: Page) => void;
+}
+
+export function LatestNews({ onNavigate }: LatestNewsProps) {
+  const news = [
+    {
+      image: 'https://images.unsplash.com/photo-1760873059715-7c7cfbe2a2c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMGJvcmVob2xlJTIwYWZyaWNhfGVufDF8fHx8MTc2MjkzMzExOXww&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'New Borehole Brings Clean Water to 500 Families',
+      excerpt: 'Our latest water project in rural Limpopo is now complete, providing reliable access to clean water for the first time.',
+      date: 'November 8, 2024',
+      category: 'Water Projects'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1666281269793-da06484657e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjbGFzc3Jvb20lMjBhZnJpY2F8ZW58MXx8fHwxNzYyOTMzMTE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      title: '45 Bursaries Awarded for 2025 Academic Year',
+      excerpt: 'We\'re proud to announce our largest bursary program yet, supporting deserving students to pursue their education dreams.',
+      date: 'November 5, 2024',
+      category: 'Education'
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1759411354058-9e429834f92f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwYWlkJTIwY2hhcml0eXxlbnwxfHx8fDE3NjI5MzMxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      title: 'Feeding Scheme Expands to Three New Communities',
+      excerpt: 'Our nutrition program now reaches an additional 800 children across Soweto and Alexandra townships.',
+      date: 'October 28, 2024',
+      category: 'Welfare'
+    }
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-end mb-12">
+          <div>
+            <h2 className="text-3xl md:text-4xl text-gray-900 mb-2">Latest News & Updates</h2>
+            <p className="text-lg text-gray-600">Stay informed about our ongoing projects and impact</p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {news.map((item, index) => (
+            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <ImageWithFallback
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-2 text-sm text-[#3cb24a] mb-3">
+                  <span className="px-3 py-1 bg-[#3cb24a]/10 rounded-full">{item.category}</span>
+                </div>
+                <h3 className="text-xl text-gray-900 mb-3 line-clamp-2">{item.title}</h3>
+                <p className="text-gray-600 mb-4 line-clamp-3">{item.excerpt}</p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Calendar size={16} className="mr-2" />
+                    {item.date}
+                  </div>
+                  <button className="text-[#19586d] hover:text-[#3cb24a] transition-colors">
+                    <ArrowRight size={20} />
+                  </button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mt-8">
+          <Button
+            variant="outline"
+            className="border-[#19586d] text-[#19586d] hover:bg-[#19586d]/5"
+          >
+            View All News & Updates
+            <ArrowRight className="ml-2" size={18} />
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

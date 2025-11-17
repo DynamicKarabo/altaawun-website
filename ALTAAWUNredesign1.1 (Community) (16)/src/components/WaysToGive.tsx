@@ -143,9 +143,9 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-1">Account Number</div>
                     <div className="flex items-center justify-between">
-                      <div className="text-gray-900 tabular-nums">123 456 7890</div>
+                      <div className="text-gray-900 tabular-nums">10 13 680 024 4</div>
                       <button
-                        onClick={() => handleCopy('1234567890', 'number')}
+                        onClick={() => handleCopy('10 13 680 024 4', 'number')}
                         className="text-emerald-600 hover:text-emerald-700 transition-colors"
                         aria-label="Copy account number"
                       >
@@ -157,7 +157,7 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-1">Branch Code</div>
                     <div className="flex items-center justify-between">
-                      <div className="text-gray-900 tabular-nums">051001</div>
+                      <div className="text-gray-900 tabular-nums">7260</div>
                       <button
                         onClick={() => handleCopy('051001', 'branch')}
                         className="text-emerald-600 hover:text-emerald-700 transition-colors"

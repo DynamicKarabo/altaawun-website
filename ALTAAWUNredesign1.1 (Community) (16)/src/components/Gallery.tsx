@@ -9,47 +9,47 @@ export function Gallery() {
   // Easy to add images - just add URLs to this array
   const galleryImages = [
     {
-      url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Community feeding program',
       title: 'Community Feeding'
     },
     {
-      url: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Back to school campaign',
       title: 'Back to School'
     },
     {
-      url: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Emergency relief',
       title: 'Emergency Relief'
     },
     {
-      url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Mother\'s day celebration',
       title: 'Mother\'s Day'
     },
     {
-      url: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Health clinic',
       title: 'Health Services'
     },
     {
-      url: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Community service',
       title: 'Community Service'
     },
     {
-      url: 'https://images.unsplash.com/photo-1441986380878-c4248f5b8b5b?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Clothing drive',
       title: 'Clothing Drive'
     },
     {
-      url: 'https://images.unsplash.com/photo-1542856204-00101eb6def4?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Ramadan iftar',
       title: 'Ramadan Programs'
     },
     {
-      url: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800',
+      url: 'https://i.imgur.com/tqphH9h.jpeg',
       alt: 'Safe house services',
       title: 'Safe House'
     }

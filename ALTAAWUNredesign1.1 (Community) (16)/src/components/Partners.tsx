@@ -11,7 +11,7 @@ export function Partners() {
     { name: 'INHANCE', image: 'https://i.postimg.cc/fLZHtbmZ/inhancelogo.jpg' },
     { name: 'The Gauteng Province', image: 'https://i.postimg.cc/c4WzgX7C/Government-of-Gauteng-logo-svg.png' },
     { name: 'AWQAF SA', image: 'https://i.postimg.cc/jdqbVgJ6/awqaflogo.jpg' },
-    { name: 'Islamic Relief South Africa', image: 'https://i.postimg.cc/L47NMv5p/irza-logo.jpg' },
+    { name: 'Islamic Relief South Africa', image: 'https://i.postimg.cc/cLnsmdkw/e6117906b7b3a0d0cc2df219fefa0e31.png' },
     { name: 'Taxleaders', image: 'https://i.postimg.cc/G3xQNrYL/LOGO-VARIANTS-01-1536x241.webp'},
     { name: 'Ashraful Aid', image: 'https://i.postimg.cc/DfBDtqkr/ashlogo2.jpg'},
   ];

@@ -64,7 +64,7 @@ export function OurImpact() {
     {
       icon: <Utensils size={32} />,
       title: 'Soup Kitchen & Feeding Scheme',
-      beneficiaries: 'Daily meals, 3 times per week',
+      beneficiaries: 'Daily meals, 5 times per week',
       details: 'Helping needy children after school to have food',
       partners: 'Shoprite and FoodForward',
       color: 'from-[#19586d] to-[#3cb24a]'
@@ -81,7 +81,7 @@ export function OurImpact() {
       icon: <Baby size={32} />,
       title: 'Community Baby Show',
       beneficiaries: '2,000 mothers-to-be',
-      details: 'Every 3 months we hosted baby shows that helped mothers-to-be with clothing and support for newborns',
+      details: 'Five times every year, we host baby shows that helped mothers-to-be with clothing and support for newborns',
       partners: 'Community supporters',
       color: 'from-[#a58644] to-[#f6a947]'
     },

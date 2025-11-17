@@ -9,34 +9,30 @@ export function Gallery() {
   // Easy to add images - just add URLs to this array
   const galleryImages = [
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Community feeding program',
-      title: 'Community Feeding'
+      url: 'https://i.postimg.cc/wjRSXSmP/Whats-App-Image-2025-11-12-at-13-27-08.jpg',
+      alt: '',
+      title: ''
+      
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Back to school campaign',
-      title: 'Back to School'
+      url: 'https://i.postimg.cc/xT1k1Pzd/Whats-App-Image-2025-11-12-at-13-27-03.jpg',
+      alt: '',
+      title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Emergency relief',
-      title: 'Emergency Relief'
+      url: 'https://i.postimg.cc/MGmxBCkS/Whats-App-Image-2025-11-12-at-13-24-37.jpg',
+      alt: '',
+      title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Mother\'s day celebration',
-      title: 'Mother\'s Day'
+      url: 'https://i.postimg.cc/44SGpvSD/Whats-App-Image-2025-11-12-at-13-24-27.jpg',
+      alt: '',
+      title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Health clinic',
-      title: 'Health Services'
-    },
-    {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Community service',
-      title: 'Community Service'
+      url: 'https://i.postimg.cc/Jnhwktcr/Whats-App-Image-2025-11-12-at-13-24-26.jpg',
+      alt: '',
+      title: ''
     },
     {
       url: 'https://i.imgur.com/tqphH9h.jpeg',

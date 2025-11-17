@@ -20,6 +20,11 @@ export function Gallery() {
       title: ''
     },
     {
+      url: 'https://i.postimg.cc/J08cYYPm/Whats-App-Image-2025-11-17-at-13-42-32.jpg',
+      alt: '',
+      title: ''
+    },
+    {
       url: 'https://i.postimg.cc/MGmxBCkS/Whats-App-Image-2025-11-12-at-13-24-37.jpg',
       alt: '',
       title: ''
@@ -35,19 +40,24 @@ export function Gallery() {
       title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Clothing drive',
-      title: 'Clothing Drive'
+      url: 'https://i.postimg.cc/RVQwhTdy/Whats-App-Image-2025-11-17-at-13-23-55.jpg',
+      alt: '',
+      title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Ramadan iftar',
-      title: 'Ramadan Programs'
+      url: 'https://i.postimg.cc/7hBDtdw5/Whats-App-Image-2025-11-17-at-13-25-00.jpg',
+      alt: '',
+      title: ''
     },
     {
-      url: 'https://i.imgur.com/tqphH9h.jpeg',
-      alt: 'Safe house services',
-      title: 'Safe House'
+      url: 'https://i.postimg.cc/76wkHwZj/Whats-App-Image-2025-11-17-at-13-27-45.jpg',
+      alt: '',
+      title: ''
+    }, 
+    {
+      url: 'https://i.postimg.cc/PNGKHrtY/Whats-App-Image-2025-11-17-at-13-30-02.jpg',
+      alt: '',
+      title: ''
     }
   ];
 

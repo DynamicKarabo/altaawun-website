@@ -1,5 +1,5 @@
 import { 
-  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack, 
+  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack, .,.
   Sparkles, Users, Shield, Stethoscope, Brain, Baby, BookOpen, 
   Rocket, Crown, Wrench, Smile, Database, MessageCircle, Map, 
   BarChart, Network, Megaphone
@@ -410,7 +410,7 @@ const [customAmount, setCustomAmount] = useState('');
                     </div>
                     <h3 className="text-xl text-gray-900 mb-3">{program.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{program.description}</p>
-                    <button className="w-full mt-4 bg-[#d97706] hover:bg-[#b45309] text-white font-medium py-2 px-4 rounded-lg transition-colors">DONATE</button>
+                    <button className="w-full mt-4 bg-[#d97706] hover:bg-[#b45309] text-white font-medium py-2 px-4 rounded-lg transition-colors" onClick={() => setIsDonateModalOpen(true)}>DONATE</button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -563,6 +563,54 @@ const [customAmount, setCustomAmount] = useState('');
           </motion.div>
         </div>
       </section>
+
+            {/* Donation Modal */}
+      {isDonateModalOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setIsDonateModalOpen(false)}>
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl text-gray-900">Make a Donation</h3>
+              <button onClick={() => setIsDonateModalOpen(false)} className="text-gray-400 hover:text-gray-600">
+                <X size={24} />
+              </button>
+            </div>
+            <p className="text-gray-600 mb-6">Select an amount or enter a custom donation:</p>
+            <div className="grid grid-cols-3 gap-3 mb-4">
+              {[100, 250, 500].map((amount) => (
+                <button
+                  key={amount}
+                  onClick={() => {setSelectedAmount(amount); setCustomAmount('');}}
+                  className={`py-3 px-4 rounded-lg border-2 transition-all ${
+                    selectedAmount === amount
+                      ? 'border-[#3cb24a] bg-[#3cb24a]/10 text-[#3cb24a]'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
+                >
+                  R{amount}
+                </button>
+              ))}
+            </div>
+            <input
+              type="number"
+              placeholder="Custom amount"
+              value={customAmount}
+              onChange={(e) => {setCustomAmount(e.target.value); setSelectedAmount(null);}}
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg mb-6 focus:border-[#3cb24a] focus:outline-none"
+            />
+            <button
+              onClick={() => {
+                const donationAmount = customAmount || selectedAmount;
+                if (donationAmount) {
+                  window.location.href = `mailto:donations@altaawunfial.org.za?subject=Donation of R${donationAmount}`;
+                }
+              }}
+              className="w-full bg-[#3cb24a] hover:bg-[#2d9138] text-white py-3 px-6 rounded-lg font-medium transition-colors"
+            >
+              Proceed to Donate
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

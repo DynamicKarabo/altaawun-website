@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, Music } from 'lucide-react';
 
 type Page = 'home' | 'about' | 'impact' | 'values' | 'programs' | 'gallery' | 'get-involved' | 'donate' | 'ways-to-give';
 
@@ -240,6 +240,24 @@ export function Footer({ onNavigate }: FooterProps) {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
+              </a>
+                            <a
+                                              href="https://wa.me/27103351773"
+                                              className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white transition-colors"
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              aria-label="WhatsApp"
+                                            >
+                <MessageCircle size={20} />
+              </a>
+                            <a
+                href="https://www.tiktok.com/@altaawunfial"
+                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+              >
+                <Music size={20} />
               </a>
             </div>
           </div>

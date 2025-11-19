@@ -6,25 +6,20 @@ import { FinancialChart } from './FinancialChart';
 export function AboutUs() {
   const teamMembers = [
     {
-      name: 'Dr. Fatima Ahmed',
+      name: 'Hawa Moses',
       role: 'Founder & Executive Director',
       bio: '15+ years in community development'
     },
     {
-      name: 'Mohammed Hassan',
-      role: 'Programs Director',
-      bio: 'Expert in water infrastructure projects'
+      name: 'Hassim Phosa',
+      role: 'Markerting Director',
+      bio: 'Expert in leading philanthropic marketing initiatives'
     },
     {
-      name: 'Aisha Patel',
-      role: 'Education Coordinator',
+      name: 'Jubeira Moses',
+      role: 'Treasurer',
       bio: 'Former educator with 10+ years experience'
-    },
-    {
-      name: 'Ibrahim Nkosi',
-      role: 'Community Relations Manager',
-      bio: 'Deep connections in rural communities'
-    }
+  }
   ];
 
   const values = [
@@ -220,49 +215,6 @@ export function AboutUs() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Board of Directors */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl text-gray-900 mb-6 text-center">Board of Directors</h2>
-            <p className="text-lg text-gray-600 mb-8 text-center">
-              Our board provides governance and strategic oversight to ensure accountability and mission alignment
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-gray-900 mb-1">Chairperson</div>
-                  <div className="text-emerald-600">Prof. Thabo Mbeki</div>
-                  <p className="text-sm text-gray-600 mt-2">Professor of Social Development, University of Cape Town</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-gray-900 mb-1">Treasurer</div>
-                  <div className="text-emerald-600">Sarah van der Merwe, CA(SA)</div>
-                  <p className="text-sm text-gray-600 mt-2">Chartered Accountant, 20+ years in NPO sector</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-gray-900 mb-1">Secretary</div>
-                  <div className="text-emerald-600">Adv. Lindiwe Dlamini</div>
-                  <p className="text-sm text-gray-600 mt-2">Human Rights Advocate</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-gray-900 mb-1">Board Member</div>
-                  <div className="text-emerald-600">Dr. Rajesh Naidoo</div>
-                  <p className="text-sm text-gray-600 mt-2">Water & Sanitation Engineer</p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>

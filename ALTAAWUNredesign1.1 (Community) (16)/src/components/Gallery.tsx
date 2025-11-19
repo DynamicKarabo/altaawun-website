@@ -63,6 +63,11 @@ export function Gallery() {
       url: 'https://i.postimg.cc/PNGKHrtY/Whats-App-Image-2025-11-17-at-13-30-02.jpg',
       alt: '',
       title: ''
+    }, 
+    {
+      url: 'https://i.postimg.cc/FzZ3K5LW/Whats-App-Image-2025-11-17-at-13-40-39.jpg',
+      alt: '',
+      title: ''
     }
   ];
 

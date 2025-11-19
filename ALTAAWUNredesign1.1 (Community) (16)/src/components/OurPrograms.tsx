@@ -1,5 +1,5 @@
 import { 
-  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack, .,.
+  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack, 
   Sparkles, Users, Shield, Stethoscope, Brain, Baby, BookOpen, 
   Rocket, Crown, Wrench, Smile, Database, MessageCircle, Map, 
   BarChart, Network, Megaphone

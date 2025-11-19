@@ -45,7 +45,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Mosque Support & Outreach',
       description: 'Care of mosque buildings, and initiatives encouraging community prayer, learning, and support.',
       color: 'from-[#f6a947] to-[#19586d]',
-      image: 'https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800'
+      image: 'https://i.postimg.cc/bYbyb9dM/Whats-App-Image-2025-11-17-at-13-45-31-(1).jpg'
     },
     {
       icon: <Moon size={28} />,

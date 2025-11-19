@@ -427,7 +427,7 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   Email Us
                 </a>
                 <a
-                  href="tel:+27123456789"
+                  href="tel:010 335 1773"
                   className="inline-flex items-center justify-center px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors"
                 >
                   Call Us

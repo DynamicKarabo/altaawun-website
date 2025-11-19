@@ -601,7 +601,30 @@ const [customAmount, setCustomAmount] = useState('');
               onClick={() => {
                 const donationAmount = customAmount || selectedAmount;
                 if (donationAmount) {
-                  window.location.href = `mailto:donations@altaawunfial.org.za?subject=Donation of R${donationAmount}`;
+                  // PayFast Integration
+              const form = document.createElement('form');
+              form.method = 'POST';
+              form.action = 'https://sandbox.payfast.co.za/eng/process'; // Use sandbox for testing
+              
+              const params = {
+                merchant_id: '10000100', // Test Merchant ID - Replace with your actual ID
+                merchant_key: '46f0cd694581a', // Test Merchant Key - Replace with your actual Key
+                amount: donationAmount.toString(),
+                item_name: 'Donation to Al-Taawun Fi Al',
+                return_url: 'https://altaawunfial.org.za',
+                cancel_url: 'https://altaawunfial.org.za',
+              };
+              
+              Object.entries(params).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
+              });
+              
+              document.body.appendChild(form);
+              form.submit();
                 }
               }}
               className="w-full bg-[#3cb24a] hover:bg-[#2d9138] text-white py-3 px-6 rounded-lg font-medium transition-colors"

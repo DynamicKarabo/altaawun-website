@@ -38,7 +38,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Clothing Drives for Vulnerable Families',
       description: 'Seasonal and year-round efforts to collect, sort, and distribute clothing and blankets to those in need.',
       color: 'from-[#a58644] to-[#f6a947]',
-      image: 'https://images.unsplash.com/photo-1441986380878-c4248f5b8b5b?w=800'
+      image: 'https://i.postimg.cc/FzBLBZgz/ramadanpic.jpg'
     },
     {
       icon: <Church size={28} />,
@@ -52,7 +52,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Ramadan Iftar & Outreach Programs',
       description: 'Daily fast-breaking sessions, zakat distribution, and communal iftars that instill unity and spirituality.',
       color: 'from-[#19586d] to-[#3cb24a]',
-      image: 'https://images.unsplash.com/photo-1542856204-00101eb6def4?w=800'
+      image: 'https://i.postimg.cc/FzBLBZgz/ramadanpic.jpg'
     },
     {
       icon: <Home size={28} />,

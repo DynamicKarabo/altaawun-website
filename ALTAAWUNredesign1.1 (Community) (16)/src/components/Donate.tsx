@@ -79,7 +79,7 @@ export function Donate() {
                   A tax-deductible receipt has been sent to your email address.
                 </p>
                 <p className="text-sm text-gray-600">
-                  NPO Registration: 123-456-NPO | Section 18A Approved
+                  NPO Registration: 235-732-NPO | Section 18A Approved
                 </p>
               </div>
               <Button
@@ -501,7 +501,7 @@ export function Donate() {
                       <div className="text-gray-900 mb-1">Bank Transfer</div>
                       <div className="text-gray-600">
                         Bank: Standard Bank<br />
-                        Account: 123456789<br />
+                        Account: 10 13 680 024 4<br />
                         Branch: 051001
                       </div>
                     </div>

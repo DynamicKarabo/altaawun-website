@@ -267,7 +267,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
-              © 2024 Al-Taawun Fi Al. All rights reserved.
+              © 2025 Al-Taawun Fi Al. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white/60 hover:text-[#f6a947] transition-colors">

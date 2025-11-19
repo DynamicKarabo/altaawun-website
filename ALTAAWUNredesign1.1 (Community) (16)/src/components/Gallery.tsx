@@ -45,7 +45,7 @@ export function Gallery() {
       title: ''
     },
     {
-      url: 'https://i.postimg.cc/7hBDtdw5/Whats-App-Image-2025-11-17-at-13-25-00.jpg',
+      url: '', 
       alt: '',
       title: ''
     },

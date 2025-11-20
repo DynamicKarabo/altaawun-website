@@ -52,7 +52,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Ramadan Iftar & Outreach Programs',
       description: 'Daily fast-breaking sessions, zakat distribution, and communal iftars that instill unity and spirituality.',
       color: 'from-[#19586d] to-[#3cb24a]',
-      image: 'https://i.postimg.cc/FzBLBZgz/ramadanpic.jpg'
+      image: 'https://i.postimg.cc/RFX4xpj7/Whats-App-Image-2025-11-20-at-10-29-52.jpg'
     },
     {
       icon: <Home size={28} />,

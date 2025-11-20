@@ -502,7 +502,7 @@ export function Donate() {
                       <div className="text-gray-600">
                         Bank: Standard Bank<br />
                         Account: 10 13 680 024 4<br />
-                        Branch: 051001
+                        Branch: 7260
                       </div>
                     </div>
                     <div className="pt-3 border-t border-gray-200">

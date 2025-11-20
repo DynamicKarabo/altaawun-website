@@ -38,7 +38,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Clothing Drives for Vulnerable Families',
       description: 'Seasonal and year-round efforts to collect, sort, and distribute clothing and blankets to those in need.',
       color: 'from-[#a58644] to-[#f6a947]',
-      image: 'https://i.postimg.cc/FzBLBZgz/ramadanpic.jpg'
+      image: 'https://i.postimg.cc/ZR5csSC6/donations.jpg'
     },
     {
       icon: <Church size={28} />,

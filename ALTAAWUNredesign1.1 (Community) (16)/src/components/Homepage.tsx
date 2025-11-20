@@ -284,7 +284,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
               <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
                 <div className="h-48 overflow-hidden">
                   <ImageWithFallback
-                    src="https://i.postimg.cc/HLHSyLy1/Hexagon-trust.jpg"
+                    src="https://i.postimg.cc/d31txcNx/Whats-App-Image-2025-11-20-at-10-23-17.jpg"
                     alt="Student success story"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />

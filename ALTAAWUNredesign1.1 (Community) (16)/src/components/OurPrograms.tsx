@@ -66,7 +66,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Back-to-School Campaigns',
       description: 'Distribution of school uniform, school bag, and stationery; further preparatory sessions to equip all children for learning at the start of the new school year.',
       color: 'from-[#a58644] to-[#f6a947]',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800'
+      image: 'https://i.postimg.cc/1zHgn1Ck/Whats-App-Image-2025-11-20-at-10-29-43.jpg'
     },
     {
       icon: <Sparkles size={28} />,

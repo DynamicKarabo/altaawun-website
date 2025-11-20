@@ -95,7 +95,7 @@ export function AboutUs() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-  href="/pdfs/2024-Annual-Report.pdf" 
+  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/2024-Annual-Report.pdf?raw=true" 
   target="_blank" 
   rel="noopener noreferrer"
   className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
@@ -105,7 +105,7 @@ export function AboutUs() {
                   2024 Annual Report
                 </a>
                 <a
-  href="/pdfs/Financial-Statements.pdf" 
+  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/Financial-Statements.pdf?raw=true" 
   target="_blank" 
   rel="noopener noreferrer"
   className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"

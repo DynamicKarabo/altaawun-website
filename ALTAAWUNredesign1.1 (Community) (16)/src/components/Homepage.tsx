@@ -316,7 +316,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
               <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
                 <div className="h-48 overflow-hidden">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1759411354058-9e429834f92f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwYWlkJTIwY2hhcml0eXxlbnwxfHx8fDE3NjI5MzMxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                    src="https://i.postimg.cc/hjHMvKFV/Whats-App-Image-2025-11-20-at-10-29-51.jpg"
                     alt="Feeding program impact"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />

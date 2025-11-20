@@ -31,7 +31,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Community Feeding Schemes',
       description: 'Daily meal schemes and mobile kitchens delivering healthy meals to children, the elderly, and vulnerable families.',
       color: 'from-[#3cb24a] to-[#a58644]',
-      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800'
+      image: 'https://i.postimg.cc/HLHSyLy1/Hexagon-trust.jpg'
     },
     {
       icon: <Shirt size={28} />,

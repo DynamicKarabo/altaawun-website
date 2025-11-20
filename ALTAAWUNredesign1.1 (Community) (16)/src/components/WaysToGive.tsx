@@ -65,17 +65,31 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
                   <span className="text-gray-700">Designate your gift to specific programs</span>
-                </div>
-              </div>
-              <Button
-                onClick={() => handleNavigate('donate')}
-                size="lg"
-                className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
-              >
-                Donate Online Now
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-            </div>
+                <Button
+  onClick={() => handleNavigate('donate')}
+  size="lg"
+  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+>
+  Donate Online Now
+  <ArrowRight className="ml-2" size={20} />
+</Button>
+
+<div className="mt-6 flex flex-col sm:flex-row gap-4">
+  <Button
+    onClick={() => handleNavigate('donate')}
+    className="bg-white border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+  >
+    Give Zakat
+  </Button>
+
+  <Button
+    onClick={() => handleNavigate('donate')}
+    className="bg-white border-2 border-teal-600 text-teal-600 hover:bg-teal-50"
+  >
+    Give Lillah
+  </Button>
+</div>
+
 
             <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200">
               <CardContent className="p-8">

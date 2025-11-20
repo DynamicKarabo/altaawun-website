@@ -80,7 +80,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'Mandela Day Community Service Projects',
       description: 'Daily activities involving volunteers—a year-round initiative of clean-up operations in city neighborhoods, reforestation initiatives, and repairs of public installations—inspired by Nelson Mandela\'s ethos of service.',
       color: 'from-[#19586d] to-[#3cb24a]',
-      image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800'
+      image: 'https://i.postimg.cc/KvVp4XLP/Whats-App-Image-2025-11-20-at-10-29-56.jpg'
     },
     {
       icon: <Shield size={28} />,

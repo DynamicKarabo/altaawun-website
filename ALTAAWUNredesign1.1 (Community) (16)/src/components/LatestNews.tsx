@@ -19,7 +19,7 @@ export function LatestNews({ onNavigate }: LatestNewsProps) {
       category: 'Water Projects'
     },
     {
-      image: 'https://images.unsplash.com/photo-1666281269793-da06484657e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjbGFzc3Jvb20lMjBhZnJpY2F8ZW58MXx8fHwxNzYyOTMzMTE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://i.postimg.cc/qMgbLDwn/Whats-App-Image-2025-11-20-at-10-23-14.jpg',
       title: '45 Bursaries Awarded for 2025 Academic Year',
       excerpt: 'We\'re proud to announce our largest bursary program yet, supporting deserving students to pursue their education dreams.',
       date: 'November 5, 2024',

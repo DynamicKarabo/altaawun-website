@@ -26,7 +26,7 @@ export function LatestNews({ onNavigate }: LatestNewsProps) {
       category: 'Education'
     },
     {
-      image: 'https://i.postimg.cc/J4LpZ7gj/Whats-App-Image-2025-11-20-at-10-29-38.jpg',
+      image: 'https://i.postimg.cc/d1yVPc8C/Whats-App-Image-2025-11-17-at-13-42-30-(2).jpg',
       title: 'Feeding Scheme Expands to Three New Communities',
       excerpt: 'Our nutrition program now reaches an additional 800 children across Soweto and Alexandra townships.',
       date: 'October 28, 2024',

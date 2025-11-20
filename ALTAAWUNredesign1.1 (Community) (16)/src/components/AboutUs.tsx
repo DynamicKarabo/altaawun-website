@@ -95,14 +95,14 @@ export function AboutUs() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href=/pdfs/2024-Annual-Report.pdf#" target="_blank" rel="noopener noreferrer"
+                  href="/pdfs/2024-Annual-Report.pdf" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
                 >
                   <FileText size={20} className="mr-2" />
                   2024 Annual Report
                 </a>
                 <a
-                  href=/pdfs/Financial-Statements.pdf#" target="_blank" rel="noopener noreferrer"
+                  href="/pdfs/Financial-Statements.pdf" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
                 >
                   <FileText size={20} className="mr-2" />

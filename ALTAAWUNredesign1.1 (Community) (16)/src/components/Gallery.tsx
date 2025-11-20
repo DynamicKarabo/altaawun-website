@@ -25,7 +25,22 @@ export function Gallery() {
       title: ''
     },
     {
+      url: 'https://i.postimg.cc/BZ2hZDyG/IMG-1329.jpg',
+      alt: '',
+      title: ''
+    },
+    {
       url: 'https://i.postimg.cc/MGmxBCkS/Whats-App-Image-2025-11-12-at-13-24-37.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/wv8hn49j/IMG-1452.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/MKKykQJN/IMG-0910.jpg',
       alt: '',
       title: ''
     },

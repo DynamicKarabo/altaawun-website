@@ -15,7 +15,7 @@ export function Partners() {
     { name: 'Taxleaders', image: 'https://i.postimg.cc/G3xQNrYL/LOGO-VARIANTS-01-1536x241.webp'},
     { name: 'Ashraful Aid', image: 'https://i.postimg.cc/DfBDtqkr/ashlogo2.jpg'},
     { name: 'Rainbow EDC', image: 'https://i.postimg.cc/N0ScWSyX/Whats-App-Image-2025-11-12-at-13-25-36.jpg'},
-    { name: 'Coat Of Arms', image: 'https://i.postimg.cc/j5QrNqX1/pngwing-com.png'},
+    { name: 'The Government of South Africa', image: 'https://i.postimg.cc/j5QrNqX1/pngwing-com.png'},
     { name: 'FoodFowardSA', image: 'https://i.postimg.cc/cL6Jd3WQ/FFSA-Logo-removebg-preview.png'},
   ];
 

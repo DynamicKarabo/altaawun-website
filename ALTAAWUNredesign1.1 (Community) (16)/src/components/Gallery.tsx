@@ -15,7 +15,7 @@ export function Gallery() {
       
     },
     {
-      url: 'https://i.postimg.cc/xT1k1Pzd/Whats-App-Image-2025-11-12-at-13-27-03.jpg',
+      url: 'https://i.postimg.cc/7Y0bWPfd/IMG-0899.jpg',
       alt: '',
       title: ''
     },

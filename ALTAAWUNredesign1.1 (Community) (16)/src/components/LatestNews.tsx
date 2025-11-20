@@ -19,14 +19,14 @@ export function LatestNews({ onNavigate }: LatestNewsProps) {
       category: 'Water Projects'
     },
     {
-      image: 'https://i.postimg.cc/qMgbLDwn/Whats-App-Image-2025-11-20-at-10-23-14.jpg',
+      image: 'https://i.postimg.cc/W4HZnS4v/Whats-App-Image-2025-11-20-at-10-29-48.jpg',
       title: '45 Bursaries Awarded for 2025 Academic Year',
       excerpt: 'We\'re proud to announce our largest bursary program yet, supporting deserving students to pursue their education dreams.',
       date: 'November 5, 2024',
       category: 'Education'
     },
     {
-      image: 'https://images.unsplash.com/photo-1759411354058-9e429834f92f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwYWlkJTIwY2hhcml0eXxlbnwxfHx8fDE3NjI5MzMxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://i.postimg.cc/J4LpZ7gj/Whats-App-Image-2025-11-20-at-10-29-38.jpg',
       title: 'Feeding Scheme Expands to Three New Communities',
       excerpt: 'Our nutrition program now reaches an additional 800 children across Soweto and Alexandra townships.',
       date: 'October 28, 2024',

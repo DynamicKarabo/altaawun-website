@@ -193,7 +193,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
         </div>
       </section>
 
-      {/* 2022 Impact Stats */}
+      {/* Impact Stats */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[#19586d] to-[#3cb24a] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

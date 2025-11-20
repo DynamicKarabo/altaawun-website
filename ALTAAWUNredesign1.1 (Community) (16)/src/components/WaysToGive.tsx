@@ -63,8 +63,10 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   <span className="text-gray-700">One-time or monthly options</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Designate your gift to specific programs</span>
+  <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
+  <span className="text-gray-700">Designate your gift to specific programs</span>
+</div>   ← ADD THIS CLOSING TAG
+
                 <Button
   onClick={() => handleNavigate('donate')}
   size="lg"

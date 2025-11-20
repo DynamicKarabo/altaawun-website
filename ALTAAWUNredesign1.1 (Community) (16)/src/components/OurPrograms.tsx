@@ -73,7 +73,7 @@ const [customAmount, setCustomAmount] = useState('');
       title: 'ATFA Mother\'s Day Celebrations',
       description: 'Lavish celebrations honoring mothers and caregivers, integrating health checkups, wellness speeches, and gift-giving to recognize their life-giving roles.',
       color: 'from-[#f6a947] to-[#19586d]',
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800'
+      image: 'https://i.postimg.cc/y6QVbXrm/flowers.webp'
     },
     {
       icon: <Users size={28} />,

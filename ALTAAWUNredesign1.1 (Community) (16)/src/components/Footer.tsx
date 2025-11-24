@@ -242,7 +242,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Linkedin size={20} />
               </a>
                             <a
-                                              href="https://wa.me/27103351773"
+                                              href="wa.link/gz1mfp"
                                               className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white transition-colors"
                                               target="_blank"
                                               rel="noopener noreferrer"

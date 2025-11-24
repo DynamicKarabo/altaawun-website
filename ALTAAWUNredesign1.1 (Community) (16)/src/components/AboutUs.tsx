@@ -12,7 +12,7 @@ export function AboutUs() {
     },
     {
       name: 'Hassim Phosa',
-      role: 'Head of Strategic Planning, Mrketing and Communication',
+      role: 'Head of Strategic Planning, Marketing and Communication',
       bio: 'Expert in leading philanthropic marketing initiatives'
     },
     {

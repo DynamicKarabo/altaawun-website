@@ -86,7 +86,7 @@ export function GetInvolved() {
             </div>
             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1760992004210-44a502a2872d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXJzJTIwY29tbXVuaXR5JTIwc2VydmljZXxlbnwxfHx8fDE3NjI5MTMwNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://i.postimg.cc/76rR8gwn/24.png"
                 alt="Volunteers at work"
                 className="w-full h-full object-cover"
               />

@@ -65,7 +65,8 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                 <div className="flex items-center space-x-3">
   <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
   <span className="text-gray-700">Designate your gift to specific programs</span>
-</div>   ← ADD THIS CLOSING TAG
+                                   </div>
+</div>
 
                 <Button
   onClick={() => handleNavigate('donate')}

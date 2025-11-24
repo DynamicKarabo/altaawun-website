@@ -22,6 +22,7 @@ export function Partners() {
     { name: 'AgriSETA', image: 'https://i.postimg.cc/rsJ9KP3M/136-imgupscaler-ai-Beta-2K.jpg'},
     { name: 'The International Institute of Islamic Thought', image: 'https://i.postimg.cc/brBsC0t8/IIIT-Master-Logo-dd-01.png'},
     { name: 'Quality Council for Trades & Occupations', image: 'https://i.postimg.cc/sg9319gs/138.png'},
+    { name: 'Aranda Textile Mills', image: 'https://i.postimg.cc/pT9QJBrB/aranda.png'},
     
   ];
 

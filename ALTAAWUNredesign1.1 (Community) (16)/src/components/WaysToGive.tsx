@@ -11,6 +11,7 @@ interface WaysToGiveProps {
 
 export function WaysToGive({ onNavigate }: WaysToGiveProps) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
+   const [donationModal, setDonationModal] = useState<string | null>(null);
 
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
@@ -79,18 +80,32 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
 
 <div className="mt-6 flex flex-col sm:flex-row gap-4">
   <Button
-    onClick={() => handleNavigate('donate')}
+    onClickonClick={() => setDonationModal('Zakat')}
     className="bg-white border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
   >
     Give Zakat
   </Button>
 
   <Button
-    onClick={() => handleNavigate('donate')}
+    onClickonClick={() => setDonationModal('Lillah')}
     className="bg-white border-2 border-teal-600 text-teal-600 hover:bg-teal-50"
   >
     Give Lillah
   </Button>
+
+   <Button
+ onClick={() => setDonationModal('Sadaqah')}
+ className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
+ >
+ Give Sadaqah
+ </Button>
+
+   <Button
+ onClick={() => setDonationModal('Waqf')}
+ className="bg-white border-2 border-orange-600 text-orange-600 hover:bg-orange-50"
+ >
+ Give Waqf
+ </Button>
 </div>
                                </div>
 
@@ -455,6 +470,26 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
           </Card>
         </div>
       </section>
+
+       {donationModal && (
+ <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+ <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+ <h2 className="text-2xl text-gray-900 mb-4">Give {donationModal}</h2>
+ <p className="text-gray-700 mb-6">
+ Thank you for choosing to give {donationModal}. We're currently setting up PayPal and Ozow payment options.
+ </p>
+ <p className="text-gray-600 text-sm mb-6">
+ In the meantime, you can donate through our Bank Transfer or Donate Online options above.
+ </p>
+ <button
+ onClick={() => setDonationModal(null)}
+ className="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700"
+ >
+ Close
+ </button>
+ </div>
+ </div>
+ )}
     </div>
   );
 }

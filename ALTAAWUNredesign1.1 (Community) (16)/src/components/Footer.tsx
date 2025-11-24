@@ -205,7 +205,6 @@ export function Footer({ onNavigate }: FooterProps) {
     </svg>
   </a>
 </li>
-
 </ul>
           </div>
 

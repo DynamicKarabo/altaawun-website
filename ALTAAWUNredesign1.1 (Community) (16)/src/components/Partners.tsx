@@ -5,7 +5,7 @@ export function Partners() {
   const partners = [
     { name: 'Boxer', image: 'https://i.postimg.cc/Jzmp00LG/id-Ffe3r37x-1763378716996.png' },
     { name: 'Proudly South Africa', image: 'https://i.postimg.cc/7hdMNtFn/pngegg.png' },
-    { name: 'PPC', image: 'https://i.postimg.cc/Vky3RzPx/ppc-stacked-logo.jpg' },
+    { name: 'PPC', image: 'https://i.postimg.cc/hjVcHH3d/ppclogog.png' },
     { name: 'MICTSETA', image: 'https://i.postimg.cc/fLKz4JDd/mict-logo.png' },
     { name: 'Shoprite', image: 'https://i.postimg.cc/QtQXK2Dg/147-imgupscaler-ai-Beta-2K.jpg' },
     { name: 'INHANCE', image: 'https://i.postimg.cc/fLZHtbmZ/inhancelogo.jpg' },

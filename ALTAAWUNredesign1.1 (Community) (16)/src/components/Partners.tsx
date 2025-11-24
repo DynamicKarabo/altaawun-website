@@ -27,6 +27,7 @@ export function Partners() {
     { name: 'Association of African Universities', image: 'https://i.postimg.cc/pVh5GTZZ/AAU-Official-Logos-1-1.png'},
     { name: 'ERKAM', image: 'https://i.postimg.cc/0jffHyYt/162875631e10ac.png'},
     { name: 'International Education Accreditation Council', image: 'https://i.postimg.cc/ZY845zK4/ieaclogo.png'},
+    { name: 'British Accreditation Council', image: 'https://i.postimg.cc/yxZJkQdh/baclogo.jpg'},
     
   ];
 

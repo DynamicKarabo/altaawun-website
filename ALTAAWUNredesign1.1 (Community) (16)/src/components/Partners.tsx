@@ -23,6 +23,10 @@ export function Partners() {
     { name: 'The International Institute of Islamic Thought', image: 'https://i.postimg.cc/brBsC0t8/IIIT-Master-Logo-dd-01.png'},
     { name: 'Quality Council for Trades & Occupations', image: 'https://i.postimg.cc/sg9319gs/138.png'},
     { name: 'Aranda Textile Mills', image: 'https://i.postimg.cc/pT9QJBrB/aranda.png'},
+    { name: 'ARMSCOR', image: 'https://i.postimg.cc/hPd6M96f/cropped-Armscor-Logo.png'},
+    { name: 'Association of African Universities', image: 'https://i.postimg.cc/pVh5GTZZ/AAU-Official-Logos-1-1.png'},
+    { name: 'ERKAM', image: 'https://i.postimg.cc/0jffHyYt/162875631e10ac.png'},
+    { name: 'International Education Accreditation Council', image: 'https://i.postimg.cc/ZY845zK4/ieaclogo.png'},
     
   ];
 

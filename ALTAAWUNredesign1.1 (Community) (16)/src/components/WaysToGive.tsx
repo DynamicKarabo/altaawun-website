@@ -92,6 +92,7 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
     Give Lillah
   </Button>
 </div>
+                               </div>
 
 
             <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200">

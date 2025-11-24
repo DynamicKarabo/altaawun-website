@@ -13,7 +13,7 @@ export function AboutUs() {
     {
       name: 'Hassim Phosa',
       role: 'Head of Strategic Planning, Marketing and Communication',
-      bio: 'Expert in leading philanthropic marketing initiatives'
+      bio: 'Expert in Leading Philanthropic Marketing Initiatives'
     },
     {
       name: 'Jubeira Moses',

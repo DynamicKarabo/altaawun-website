@@ -19,6 +19,10 @@ export function Partners() {
     { name: 'FoodFowardSA', image: 'https://i.postimg.cc/cL6Jd3WQ/FFSA-Logo-removebg-preview.png'},
     { name: 'Lenasia Livestock & Poultry', image: 'https://i.postimg.cc/JzN9K6br/Whats-App-Image-2025-11-24-at-11-37-22.jpg'},
     { name: 'S Thabit Attorneys', image: 'https://i.postimg.cc/zGwmDzXx/481960121-1310993423864576-1944585775344981447-n.jpg'},
+    { name: 'AgriSETA', image: 'https://i.postimg.cc/rsJ9KP3M/136-imgupscaler-ai-Beta-2K.jpg'},
+    { name: 'The International Institute of Islamic Thought', image: 'https://i.postimg.cc/brBsC0t8/IIIT-Master-Logo-dd-01.png'},
+    { name: 'Quality Council for Trades & Occupations', image: 'https://i.postimg.cc/sg9319gs/138.png'},
+    
   ];
 
   return (

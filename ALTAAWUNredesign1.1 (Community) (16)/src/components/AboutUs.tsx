@@ -8,7 +8,7 @@ export function AboutUs() {
     {
       name: 'Hawa Moses',
       role: 'Chief Executive Officer',
-      bio: '15+ years in community development'
+      bio: '15+ Years in Community Development'
     },
     {
       name: 'Hassim Phosa',
@@ -18,7 +18,7 @@ export function AboutUs() {
     {
       name: 'Jubeira Moses',
       role: 'Chief Financial Officer',
-      bio: 'Former educator with 10+ years experience'
+      bio: 'Former Educator with 10+ Years Experience'
     },
     {
       name: 'Momie Morgan',

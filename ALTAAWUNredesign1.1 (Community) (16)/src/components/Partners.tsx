@@ -18,6 +18,7 @@ export function Partners() {
     { name: 'The Government of South Africa', image: 'https://i.postimg.cc/j5QrNqX1/pngwing-com.png'},
     { name: 'FoodFowardSA', image: 'https://i.postimg.cc/cL6Jd3WQ/FFSA-Logo-removebg-preview.png'},
     { name: 'Lenasia Livestock & Poultry', image: 'https://i.postimg.cc/JzN9K6br/Whats-App-Image-2025-11-24-at-11-37-22.jpg'},
+    { name: 'S Thabit Attorneys', image: 'https://i.postimg.cc/zGwmDzXx/481960121-1310993423864576-1944585775344981447-n.jpg'},
   ];
 
   return (

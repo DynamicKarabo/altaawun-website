@@ -28,6 +28,7 @@ export function Partners() {
     { name: 'ERKAM', image: 'https://i.postimg.cc/0jffHyYt/162875631e10ac.png'},
     { name: 'International Education Accreditation Council', image: 'https://i.postimg.cc/ZY845zK4/ieaclogo.png'},
     { name: 'British Accreditation Council', image: 'https://i.postimg.cc/yxZJkQdh/baclogo.jpg'},
+    { name: 'International Association of Universities', image: 'https://i.postimg.cc/y6Lsw418/International-Association-of-Universities-logo.jpg'},
     
   ];
 

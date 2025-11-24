@@ -23,7 +23,7 @@ export function AboutUs() {
     {
       name: 'Momie Morgan',
       role: 'Chief Operating Officer',
-      bio: ''
+      bio: 'Experienced leader overseeing daily operations, ensuring program effectiveness, and driving organizational efficiency to maximize impact across communities.'
   }
   ];
 

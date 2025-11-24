@@ -30,7 +30,7 @@ export function Partners() {
     { name: 'British Accreditation Council', image: 'https://i.postimg.cc/yxZJkQdh/baclogo.jpg'},
     { name: 'International Association of Universities', image: 'https://i.postimg.cc/y6Lsw418/International-Association-of-Universities-logo.jpg'},
     { name: 'Council on Higher Education', image: 'https://i.postimg.cc/wTxcjJYg/CHE-logo.png'},
-    { name: 'TEARS Foundation', image: 'https://i.postimg.cc/4d7LxcCs/TEARS-LOGO-TEAL-Recovered-scaled.webp'},
+    { name: 'TEARS Foundation', image: 'https://i.postimg.cc/zv6ZtNny/image001.png'},
     
   ];
 

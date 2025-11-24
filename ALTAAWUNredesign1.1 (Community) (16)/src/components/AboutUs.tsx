@@ -7,18 +7,23 @@ export function AboutUs() {
   const teamMembers = [
     {
       name: 'Hawa Moses',
-      role: 'Founder & Executive Director',
+      role: 'Chief Executive Officer',
       bio: '15+ years in community development'
     },
     {
       name: 'Hassim Phosa',
-      role: 'Markerting Director',
+      role: 'Head of Strategic Planning, Mrketing and Communication',
       bio: 'Expert in leading philanthropic marketing initiatives'
     },
     {
       name: 'Jubeira Moses',
-      role: 'Treasurer',
+      role: 'Chief Financial Officer',
       bio: 'Former educator with 10+ years experience'
+    },
+    {
+      name: 'Momie Morgan',
+      role: 'Chief Operating Officer',
+      bio: ''
   }
   ];
 

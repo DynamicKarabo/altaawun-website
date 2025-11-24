@@ -271,13 +271,13 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white/60 hover:text-[#f6a947] transition-colors">
-                Privacy Policy
+                
               </a>
               <a href="#" className="text-white/60 hover:text-[#f6a947] transition-colors">
-                Terms of Service
+                
               </a>
               <a href="#" className="text-white/60 hover:text-[#f6a947] transition-colors">
-                Financial Reports
+                
               </a>
             </div>
           </div>

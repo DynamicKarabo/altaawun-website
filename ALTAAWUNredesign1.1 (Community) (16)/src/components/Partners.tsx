@@ -29,6 +29,7 @@ export function Partners() {
     { name: 'International Education Accreditation Council', image: 'https://i.postimg.cc/ZY845zK4/ieaclogo.png'},
     { name: 'British Accreditation Council', image: 'https://i.postimg.cc/yxZJkQdh/baclogo.jpg'},
     { name: 'International Association of Universities', image: 'https://i.postimg.cc/y6Lsw418/International-Association-of-Universities-logo.jpg'},
+    { name: 'Council on Higher Education', image: 'https://i.postimg.cc/wTxcjJYg/CHE-logo.png'},
     
   ];
 

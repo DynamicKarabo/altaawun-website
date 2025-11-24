@@ -229,7 +229,7 @@ export function OurValue() {
             <p className="text-xl text-gray-900 italic mb-2" style={{ fontFamily: 'Georgia, serif' }}>
               "The capability was always there. We just help bring it to light."
             </p>
-            <p className="text-gray-600">— Al-Taawun Foundation</p>
+            <p className="text-gray-600">— Hawa Moses</p>
           </div>
         </div>
       </section>

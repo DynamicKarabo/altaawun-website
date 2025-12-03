@@ -313,5 +313,4 @@ export function Footer({ onNavigate }: FooterProps) {
       </div>
     </footer>
   );
-} //
-      }
+}

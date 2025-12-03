@@ -315,3 +315,4 @@ export function Footer({ onNavigate }: FooterProps) {
   );
 }
 export default Footer;
+      }

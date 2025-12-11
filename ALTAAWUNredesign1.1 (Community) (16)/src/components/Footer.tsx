@@ -179,9 +179,8 @@ export function Footer({ onNavigate }: FooterProps) {
                   </svg>
                 </a>
               </li>
-              <li>
-          </div>
-
+                        </ul>
+                    </div>
           {/ Contact /}
           <div>
             <h3 className="text-white mb-4">Contact</h3>

@@ -179,8 +179,22 @@ export function Footer({ onNavigate }: FooterProps) {
                   </svg>
                 </a>
               </li>
-                        </ul>
-                    </div>
+              <li>
+                <a
+                  href="/documents/LetterofAppreciation.pdf"
+                  target="blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
+                >
+                  <span>NPO Letter</span>
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
           {/ Contact /}
           <div>
             <h3 className="text-white mb-4">Contact</h3>

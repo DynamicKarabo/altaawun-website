@@ -1,4 +1,3 @@
-jsx
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, Music } from 'lucide-react';
 
 type Page = 'home' | 'about' | 'impact' | 'values' | 'programs' | 'gallery' | 'get-involved' | 'donate' | 'ways-to-give';

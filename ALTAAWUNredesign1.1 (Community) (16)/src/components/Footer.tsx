@@ -1,6 +1,25 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, MessageCircle, Music } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  MessageCircle,
+  Music,
+} from "lucide-react";
 
-type Page = 'home' | 'about' | 'impact' | 'values' | 'programs' | 'gallery' | 'get-involved' | 'donate' | 'ways-to-give';
+type Page =
+  | "home"
+  | "about"
+  | "impact"
+  | "values"
+  | "programs"
+  | "gallery"
+  | "get-involved"
+  | "donate"
+  | "ways-to-give";
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
@@ -9,14 +28,14 @@ interface FooterProps {
 export function Footer({ onNavigate }: FooterProps) {
   const handleNavigate = (page: Page) => {
     onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <footer className="bg-[19586d] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-5 gap-8 mb-8">
-          {/ About /}
+          {/* About */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-[f6a947] to-[a58644] rounded-lg flex items-center justify-center">
@@ -26,25 +45,30 @@ export function Footer({ onNavigate }: FooterProps) {
                 <div className="text-white">Al-Taawun Fi Al</div>
               </div>
             </div>
-            <p className="text-[a58644] italic mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            <p
+              className="text-[a58644] italic mb-2"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
               "Reveal Concealed Capabilities"
             </p>
             <p className="text-white/70 text-sm mb-4">
-              Transforming communities across South Africa through sustainable welfare, water, and education programs.
+              Transforming communities across South Africa through sustainable
+              welfare, water, and education programs.
             </p>
             <div className="text-sm text-white/60">
-              NPO: 235-732<br />
+              NPO: 235-732
+              <br />
               Section 18A Approved
             </div>
           </div>
 
-          {/ Quick Links /}
+          {/* Quick Links */}
           <div>
             <h3 className="text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => handleNavigate('home')}
+                  onClick={() => handleNavigate("home")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Home
@@ -52,7 +76,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('about')}
+                  onClick={() => handleNavigate("about")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   About Us
@@ -60,7 +84,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('values')}
+                  onClick={() => handleNavigate("values")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Our Values
@@ -68,7 +92,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('programs')}
+                  onClick={() => handleNavigate("programs")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Our Programs
@@ -76,7 +100,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('impact')}
+                  onClick={() => handleNavigate("impact")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Our Impact
@@ -84,7 +108,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('gallery')}
+                  onClick={() => handleNavigate("gallery")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Gallery
@@ -92,7 +116,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('get-involved')}
+                  onClick={() => handleNavigate("get-involved")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Get Involved
@@ -100,7 +124,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigate('ways-to-give')}
+                  onClick={() => handleNavigate("ways-to-give")}
                   className="text-white/70 hover:text-[f6a947] transition-colors"
                 >
                   Ways to Give
@@ -109,7 +133,7 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/ Useful Links - Certifications & Documents /}
+          {/* Useful Links - Certifications & Documents */}
           <div>
             <h3 className="text-white mb-4">Useful Links</h3>
             <ul className="space-y-2 text-sm">
@@ -121,8 +145,18 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>Privacy Policy</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
@@ -134,8 +168,18 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>Proudly SA Certification</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
@@ -147,8 +191,18 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>PBO Certificate (SARS)</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
@@ -160,8 +214,18 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>BEE Certificate</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
@@ -173,8 +237,18 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>Governance Code for Islamic NPOs</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
@@ -186,40 +260,67 @@ export function Footer({ onNavigate }: FooterProps) {
                   className="text-white/70 hover:text-[f6a947] transition-colors flex items-center gap-1"
                 >
                   <span>NPO Letter</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <svg
+                    className="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
                   </svg>
                 </a>
               </li>
             </ul>
           </div>
 
-          {/ Contact /}
+          {/* Contact */}
           <div>
             <h3 className="text-white mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <Mail className="text-[f6a947] flex-shrink-0 mt-0.5" size={16} />
-                <a href="mailto:info@altaawunfial.org.za" className="text-white/70 hover:text-[f6a947] transition-colors">
+                <Mail
+                  className="text-[f6a947] flex-shrink-0 mt-0.5"
+                  size={16}
+                />
+                <a
+                  href="mailto:info@altaawunfial.org.za"
+                  className="text-white/70 hover:text-[f6a947] transition-colors"
+                >
                   info@altaawunfial.org.za
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <Phone className="text-[f6a947] flex-shrink-0 mt-0.5" size={16} />
-                <a href="tel:0103351773" className="text-white/70 hover:text-[f6a947] transition-colors">
+                <Phone
+                  className="text-[f6a947] flex-shrink-0 mt-0.5"
+                  size={16}
+                />
+                <a
+                  href="tel:0103351773"
+                  className="text-white/70 hover:text-[f6a947] transition-colors"
+                >
                   010 335 1773
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <MapPin className="text-[f6a947] flex-shrink-0 mt-0.5" size={16} />
+                <MapPin
+                  className="text-[f6a947] flex-shrink-0 mt-0.5"
+                  size={16}
+                />
                 <span className="text-white/70">
-                  Cnr Katz & Smith, Ennerdale Ext 9,<br />Civic Center, 1830
+                  Cnr Katz & Smith, Ennerdale Ext 9,
+                  <br />
+                  Civic Center, 1830
                 </span>
               </li>
             </ul>
           </div>
 
-          {/ Follow Us /}
+          {/* Follow Us */}
           <div>
             <h3 className="text-white mb-4">Follow Us</h3>
             <p className="text-gray-400 text-sm mb-4">
@@ -276,22 +377,25 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        {/ Bottom Bar /}
+        {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
               © 2025 Al-Taawun Fi Al. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="" className="text-white/60 hover:text-[f6a947] transition-colors">
-
-              </a>
-              <a href="" className="text-white/60 hover:text-[f6a947] transition-colors">
-
-              </a>
-              <a href="" className="text-white/60 hover:text-[f6a947] transition-colors">
-
-              </a>
+              <a
+                href=""
+                className="text-white/60 hover:text-[f6a947] transition-colors"
+              ></a>
+              <a
+                href=""
+                className="text-white/60 hover:text-[f6a947] transition-colors"
+              ></a>
+              <a
+                href=""
+                className="text-white/60 hover:text-[f6a947] transition-colors"
+              ></a>
             </div>
           </div>
         </div>

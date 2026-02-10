@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export REPOPATH=/home/altaawun/altaawun-website/
+    - export DEPLOYPATH=/home/altaawun/public_html/
+    - /bin/rsync -av --delete $REPOPATH $DEPLOYPATH

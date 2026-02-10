@@ -39,9 +39,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
             onClick={() => handleNavClick('home')}
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
-            <img 
-              src={logoImage} 
-              alt="Al-Taawun Fi Al" 
+            <img
+              src={logoImage}
+              alt="Al-Taawun Fi Al"
               className="h-20 md:h-28 w-auto"
             />
           </button>
@@ -52,11 +52,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`transition-colors ${
-                  currentPage === item.id
-                    ? 'text-[#19586d]'
-                    : 'text-gray-700 hover:text-[#19586d]'
-                }`}
+                className={`transition-colors ${currentPage === item.id
+                  ? 'text-[#19586d]'
+                  : 'text-gray-700 hover:text-[#19586d]'
+                  }`}
               >
                 {item.label}
               </button>
@@ -95,11 +94,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-4 py-3 transition-colors ${
-                  currentPage === item.id
-                    ? 'text-[#19586d] bg-[#19586d]/5'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
+                className={`block w-full text-left px-4 py-3 transition-colors ${currentPage === item.id
+                  ? 'text-[#19586d] bg-[#19586d]/5'
+                  : 'text-gray-700 hover:bg-gray-50'
+                  }`}
               >
                 {item.label}
               </button>

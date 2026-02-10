@@ -1,7 +1,7 @@
-import { 
-  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack, 
-  Sparkles, Users, Shield, Stethoscope, Brain, Baby, BookOpen, 
-  Rocket, Crown, Wrench, Smile, Database, MessageCircle, Map, 
+import {
+  Heart, HandHelping, Shirt, Church, Moon, Home, Backpack,
+  Sparkles, Users, Shield, Stethoscope, Brain, Baby, BookOpen,
+  Rocket, Crown, Wrench, Smile, Database, MessageCircle, Map,
   BarChart, Network, Megaphone
 } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
@@ -10,15 +10,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { payfastConfig } from '../config/payfast';
 
 
 export function OurPrograms() {
   const [isDonateModalOpen, setIsDonateModalOpen] = useState(false);
-const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-const [customAmount, setCustomAmount] = useState('');
+  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
+  const [customAmount, setCustomAmount] = useState('');
 
   const corePrograms = [
-    
+
     {
       icon: <Heart size={28} />,
       title: 'Humanitarian Aid & Emergency Relief',
@@ -313,24 +314,24 @@ const [customAmount, setCustomAmount] = useState('');
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-24 md:py-32 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 opacity-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 1 }}
         >
-          <motion.div 
+          <motion.div
             className="absolute top-20 right-20 w-64 h-64 bg-[#f6a947] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               x: [0, 50, 0],
               y: [0, -30, 0]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
-          <motion.div 
+          <motion.div
             className="absolute bottom-20 left-20 w-96 h-96 bg-[#3cb24a] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               x: [0, -40, 0],
               y: [0, 40, 0]
@@ -338,10 +339,10 @@ const [customAmount, setCustomAmount] = useState('');
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.div 
+            <motion.div
               className="inline-block px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-6 text-white"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -349,7 +350,7 @@ const [customAmount, setCustomAmount] = useState('');
             >
               Comprehensive Support Services
             </motion.div>
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl text-white mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -357,13 +358,13 @@ const [customAmount, setCustomAmount] = useState('');
             >
               Our Programs
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl text-white/90 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Al-Taawun Fi Al offers a variety of personalized services to meet the unique needs of each life stage. 
+              Al-Taawun Fi Al offers a variety of personalized services to meet the unique needs of each life stage.
               Our holistic, client-centered approach ensures that everyone has access to the support and resources needed to thrive.
             </motion.p>
           </div>
@@ -373,7 +374,7 @@ const [customAmount, setCustomAmount] = useState('');
       {/* Core Programs with Images */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -422,7 +423,7 @@ const [customAmount, setCustomAmount] = useState('');
       {/* Life Stage Programs */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-[#19586d]/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -455,7 +456,7 @@ const [customAmount, setCustomAmount] = useState('');
                   <div className={`w-20 h-20 bg-gradient-to-br ${data.color} rounded-2xl flex items-center justify-center text-white mb-8 mx-auto`}>
                     {data.icon}
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     {data.programs.map((program, index) => (
                       <motion.div
@@ -469,7 +470,7 @@ const [customAmount, setCustomAmount] = useState('');
                           <CardContent className="p-6">
                             <h3 className="text-lg text-[#19586d] mb-3">{program.name}</h3>
                             <p className="text-gray-700">{program.description}</p>
-                            
+
                           </CardContent>
                         </Card>
                       </motion.div>
@@ -485,7 +486,7 @@ const [customAmount, setCustomAmount] = useState('');
       {/* Knowledge Management Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -494,7 +495,7 @@ const [customAmount, setCustomAmount] = useState('');
           >
             <h2 className="text-3xl md:text-4xl text-gray-900 mb-4">Knowledge & Dialogue Programs</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our core work is centered on using people's knowledge and memory to inform practical, sustainable solutions to pressing social problems. 
+              Our core work is centered on using people's knowledge and memory to inform practical, sustainable solutions to pressing social problems.
               Through an integrated, dynamic information system and evidence-based dialogue interventions, we create positive change in diverse communities.
             </p>
           </motion.div>
@@ -527,7 +528,7 @@ const [customAmount, setCustomAmount] = useState('');
       {/* Call to Action */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[#19586d] to-[#3cb24a] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -536,17 +537,17 @@ const [customAmount, setCustomAmount] = useState('');
           >
             Get Involved in Our Programs
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Whether you need support, want to volunteer, or wish to sponsor a program, 
+            Whether you need support, want to volunteer, or wish to sponsor a program,
             we welcome you to join our mission of revealing concealed capabilities.
           </motion.p>
-          
+
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -564,7 +565,7 @@ const [customAmount, setCustomAmount] = useState('');
         </div>
       </section>
 
-            {/* Donation Modal */}
+      {/* Donation Modal */}
       {isDonateModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setIsDonateModalOpen(false)}>
           <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
@@ -579,12 +580,11 @@ const [customAmount, setCustomAmount] = useState('');
               {[100, 250, 500].map((amount) => (
                 <button
                   key={amount}
-                  onClick={() => {setSelectedAmount(amount); setCustomAmount('');}}
-                  className={`py-3 px-4 rounded-lg border-2 transition-all ${
-                    selectedAmount === amount
-                      ? 'border-[#3cb24a] bg-[#3cb24a]/10 text-[#3cb24a]'
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
+                  onClick={() => { setSelectedAmount(amount); setCustomAmount(''); }}
+                  className={`py-3 px-4 rounded-lg border-2 transition-all ${selectedAmount === amount
+                    ? 'border-[#3cb24a] bg-[#3cb24a]/10 text-[#3cb24a]'
+                    : 'border-gray-200 hover:border-gray-300'
+                    }`}
                 >
                   R{amount}
                 </button>
@@ -594,7 +594,7 @@ const [customAmount, setCustomAmount] = useState('');
               type="number"
               placeholder="Custom amount"
               value={customAmount}
-              onChange={(e) => {setCustomAmount(e.target.value); setSelectedAmount(null);}}
+              onChange={(e) => { setCustomAmount(e.target.value); setSelectedAmount(null); }}
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg mb-6 focus:border-[#3cb24a] focus:outline-none"
             />
             <button
@@ -602,29 +602,32 @@ const [customAmount, setCustomAmount] = useState('');
                 const donationAmount = customAmount || selectedAmount;
                 if (donationAmount) {
                   // PayFast Integration
-              const form = document.createElement('form');
-              form.method = 'POST';
-              form.action = 'https://sandbox.payfast.co.za/eng/process'; // Use sandbox for testing
-              
-              const params = {
-                merchant_id: '10000100', // Test Merchant ID - Replace with your actual ID
-                merchant_key: '46f0cd694581a', // Test Merchant Key - Replace with your actual Key
-                amount: donationAmount.toString(),
-                item_name: 'Donation to Al-Taawun Fi Al',
-                return_url: 'https://altaawunfial.org.za',
-                cancel_url: 'https://altaawunfial.org.za',
-              };
-              
-              Object.entries(params).forEach(([key, value]) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                form.appendChild(input);
-              });
-              
-              document.body.appendChild(form);
-              form.submit();
+                  const baseUrl = payfastConfig.sandbox ? 'https://sandbox.payfast.co.za/eng/process' : 'https://www.payfast.co.za/eng/process';
+
+                  const form = document.createElement('form');
+                  form.method = 'POST';
+                  form.action = baseUrl;
+
+                  const params = {
+                    merchant_id: payfastConfig.merchantId,
+                    merchant_key: payfastConfig.merchantKey,
+                    amount: donationAmount.toString(),
+                    item_name: 'Donation to Al-Taawun Fi Al',
+                    return_url: payfastConfig.returnUrl,
+                    cancel_url: payfastConfig.cancelUrl,
+                    notify_url: payfastConfig.notifyUrl,
+                  };
+
+                  Object.entries(params).forEach(([key, value]) => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = value;
+                    form.appendChild(input);
+                  });
+
+                  document.body.appendChild(form);
+                  form.submit();
                 }
               }}
               className="w-full bg-[#3cb24a] hover:bg-[#2d9138] text-white py-3 px-6 rounded-lg font-medium transition-colors"

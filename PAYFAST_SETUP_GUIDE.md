@@ -1,178 +1,37 @@
-# PayFast Integration Fix - Setup Guide
+# PayFast Integration for cPanel (Static Build)
 
-## Overview
+Since we have moved to a static hosting environment (cPanel), the PayFast integration has been updated to work without a backend server.
 
-Your Vercel deployment has critical security and configuration issues with the PayFast donation integration. This guide explains the fixes and how to implement them.
+## ⚙️ Configuration
 
-## 🔴 Issues Found
+The PayFast credentials are now stored in a configuration file within the source code.
 
-1. **Hardcoded Test Credentials** - Merchant ID and Key exposed in client code
-2. **No Signature Validation** - PayFast signatures not generated, transactions rejected
-3. **Missing Environment Variables** - Credentials not stored in Vercel
-4. **No API Layer** - Payment data exposed to frontend, no server-side validation
-5. **Sandbox URLs in Production** - Using test endpoint instead of live
+**File Location:** `src/config/payfast.ts`
 
-## ✅ Solutions Implemented
-
-Three new files have been created:
-
-### 1. `lib/payfast.ts` - Utility Functions
-- Generates MD5 signatures for PayFast authentication
-- Verifies webhook signatures
-- Builds secure PayFast URLs
-
-### 2. `app/api/payfast-donate/route.ts` - Secure API Endpoint  
-- Validates donation amounts server-side
-- Reads credentials from environment variables
-- Generates valid PayFast signatures
-- Returns redirect URL to frontend
-
-### 3. This Guide
-- Step-by-step setup instructions
-
-## 🚀 Implementation Steps
-
-### Step 1: Add Environment Variables to Vercel
-
-1. Go to your Vercel project dashboard
-2. Click **Settings** → **Environment Variables**
-3. Add these variables (get values from PayFast):
-
-```
-PAYFAST_MERCHANT_ID=your_merchant_id
-PAYFAST_MERCHANT_KEY=your_merchant_key
-PAYFAST_RETURN_URL=https://altaawunfial.org.za/donation-success
-PAYFAST_CANCEL_URL=https://altaawunfial.org.za/donation-cancelled
-PAYFAST_NOTIFY_URL=https://your-domain.com/api/payfast-webhook
-PAYFAST_SANDBOX=false
-```
-
-**For testing/staging:**
-```
-PAYFAST_SANDBOX=true
-PAYFAST_MERCHANT_ID=10000100
-PAYFAST_MERCHANT_KEY=46f0cd694581a
-```
-
-### Step 2: Update OurPrograms.tsx Component
-
-Replace the hardcoded PayFast logic (lines 601-634) with:
+### How to Go Live
+1.  Open `src/config/payfast.ts`.
+2.  Change `sandbox: true` to `sandbox: false`.
+3.  Replace the `merchantId` and `merchantKey` with your **Production** credentials from your PayFast dashboard.
+4.  (Optional) Set a `passPhrase` if you have enabled it on your PayFast account, but note that for client-side integrations, this is visible in the build, so we recommend **disabling the passphrase check** on your PayFast dashboard for this specific integration to strictly rely on the Merchant ID/Key and domain validation.
 
 ```typescript
-const handleDonate = async () => {
-  const donationAmount = customAmount || selectedAmount;
-  
-  if (!donationAmount) {
-    alert('Please select or enter an amount');
-    return;
-  }
-
-  try {
-    // Call our secure API endpoint
-    const response = await fetch('/api/payfast-donate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: parseFloat(donationAmount) })
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      alert(data.error || 'Donation processing failed');
-      return;
-    }
-
-    // Redirect to PayFast
-    window.location.href = data.redirectUrl;
-  } catch (error) {
-    console.error('Donation error:', error);
-    alert('An error occurred. Please try again.');
-  }
+export const payfastConfig = {
+  merchantId: 'YOUR_PRODUCTION_MERCHANT_ID',
+  merchantKey: 'YOUR_PRODUCTION_KEY',
+  passPhrase: '', // Leave empty for static sites
+  sandbox: false, // Set to false for live payments
+  // ... URLs
 };
 ```
 
-Then update the button onClick:
-```typescript
-<button
-  onClick={handleDonate}
-  className="w-full bg-[#3cb24a] hover:bg-[#2d9138] text-white py-3 px-6 rounded-lg font-medium transition-colors"
->
-  Proceed to Donate
-</button>
-```
+## 🚀 Deployment Steps
+After updating the configuration:
+1.  Run `npm run build` to generate the new production files.
+2.  Zip the `dist` (or `build`) folder.
+3.  Upload to cPanel as per the [Deployment Guide](./cpanel_deployment_guide.md).
 
-### Step 3: Test the Integration
-
-1. **Local Testing:**
-   ```bash
-   # Create .env.local file
-   PAYFAST_MERCHANT_ID=10000100
-   PAYFAST_MERCHANT_KEY=46f0cd694581a
-   PAYFAST_SANDBOX=true
-   ```
-
-2. **Deploy to Vercel:**
-   - Push changes to main branch
-   - Vercel will auto-deploy
-   - Test on staging URL first
-
-3. **Verify:**
-   - Click DONATE button
-   - Enter test amount (e.g., 100)
-   - Should redirect to PayFast sandbox
-
-### Step 4: Get Production Credentials
-
-1. Visit https://www.payfast.co.za/
-2. Create merchant account
-3. Get Merchant ID and Merchant Key
-4. Update Vercel environment variables
-5. Set `PAYFAST_SANDBOX=false`
-
-## 📋 Checklist
-
-- [ ] Created `lib/payfast.ts` ✓
-- [ ] Created `app/api/payfast-donate/route.ts` ✓  
-- [ ] Added environment variables to Vercel
-- [ ] Updated OurPrograms.tsx donation handler
-- [ ] Tested on staging environment
-- [ ] Configured production PayFast credentials
-- [ ] Set PAYFAST_SANDBOX=false in production
-- [ ] Tested live donations
-
-## 🔒 Security Improvements
-
-✓ **No hardcoded credentials** - All secrets in environment variables  
-✓ **Server-side validation** - Amount validated before sending to PayFast  
-✓ **MD5 signatures** - PayFast can verify request authenticity  
-✓ **Webhook verification** - Can verify payment confirmations  
-✓ **Error handling** - User-friendly error messages  
-✓ **Minimum donation** - Prevents spam (R0.50 minimum)  
-
-## 🐛 Troubleshooting
-
-**Issue: "Payment gateway not configured"**
-- Check environment variables are set in Vercel
-- Verify PAYFAST_MERCHANT_ID and PAYFAST_MERCHANT_KEY
-
-**Issue: Transaction rejected by PayFast**
-- Verify MD5 signature is correct
-- Check merchant credentials are valid
-- Ensure PAYFAST_SANDBOX matches your account type
-
-**Issue: Redirect not working**
-- Check API response has `redirectUrl`
-- Verify CORS is not blocking the request
-- Check browser console for errors
-
-## 📚 Resources
-
-- PayFast Docs: https://www.payfast.co.za/developers
-- Next.js API Routes: https://nextjs.org/docs/api-routes
-- Environment Variables: https://vercel.com/docs/environment-variables
-
-## Questions?
-
-Refer to the inline code comments in:
-- `lib/payfast.ts`
-- `app/api/payfast-donate/route.ts`
+## ⚠️ Security Note
+In a client-side (static) integration, your Merchant ID and Key are technically visible to anyone who inspects the website code.
+*   **This is normal** for simple static site integrations (similar to PayPal buttons).
+*   **Do NOT** enable "Passphrase validation" on your PayFast account unless you have a backend server to sign the requests securely.
+*   Ensure your **Return URL** and **Notify URL** are set correctly on your PayFast dashboard to prevent phishing.

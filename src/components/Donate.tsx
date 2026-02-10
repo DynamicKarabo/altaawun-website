@@ -50,10 +50,46 @@ export function Donate() {
     }
   ];
 
+  // PayFast Configuration
+  const merchantId = '10000100'; // Replace with your Merchant ID
+  const merchantKey = '46f0cd694581a'; // Replace with your Merchant Key
+  const isSandbox = true;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would process the payment
-    setDonationComplete(true);
+    const amount = getCurrentAmount();
+
+    if (!amount) return;
+
+    // Construct PayFast URL
+    const baseUrl = isSandbox ? 'https://sandbox.payfast.co.za/eng/process' : 'https://www.payfast.co.za/eng/process';
+
+    // Create a hidden form and submit it
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = baseUrl;
+
+    const fields = {
+      merchant_id: merchantId,
+      merchant_key: merchantKey,
+      amount: amount.toFixed(2),
+      item_name: `Donation - ${projects.find(p => p.id === selectedProject)?.name || 'General'}`,
+      return_url: `${window.location.origin}/success`,
+      cancel_url: `${window.location.origin}/donate`,
+      // notify_url: 'https://your-domain.com/api/notify', // Optional: requires a backend
+    };
+
+    Object.entries(fields).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    setDonationComplete(true); // Optimistic UI update, though page will redirect
   };
 
   const getCurrentAmount = () => {
@@ -109,7 +145,7 @@ export function Donate() {
             <p className="text-lg md:text-xl text-gray-700 mb-8">
               Your support transforms lives. Every donation directly funds water projects, feeding programs, and educational support across South Africa.
             </p>
-            
+
             {/* Trust Badges */}
             <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-700">
               <div className="flex items-center">
@@ -144,7 +180,7 @@ export function Donate() {
               <p className="text-lg text-gray-700 mb-6">
                 Become part of an exclusive group of monthly donors who provide sustained, reliable support that allows us to plan long-term projects and create lasting change.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-emerald-600 flex-shrink-0 mt-1" size={20} />
@@ -264,11 +300,10 @@ export function Donate() {
                       <button
                         type="button"
                         onClick={() => setSelectedFrequency('once')}
-                        className={`p-4 rounded-lg border-2 transition-colors ${
-                          selectedFrequency === 'once'
+                        className={`p-4 rounded-lg border-2 transition-colors ${selectedFrequency === 'once'
                             ? 'border-emerald-600 bg-emerald-50'
                             : 'border-gray-200 hover:border-emerald-300'
-                        }`}
+                          }`}
                       >
                         <div className="text-lg text-gray-900">One-Time</div>
                         <div className="text-sm text-gray-600">Make a single donation</div>
@@ -276,11 +311,10 @@ export function Donate() {
                       <button
                         type="button"
                         onClick={() => setSelectedFrequency('monthly')}
-                        className={`p-4 rounded-lg border-2 transition-colors ${
-                          selectedFrequency === 'monthly'
+                        className={`p-4 rounded-lg border-2 transition-colors ${selectedFrequency === 'monthly'
                             ? 'border-emerald-600 bg-emerald-50'
                             : 'border-gray-200 hover:border-emerald-300'
-                        }`}
+                          }`}
                       >
                         <div className="text-lg text-gray-900">Monthly</div>
                         <div className="text-sm text-gray-600">Ongoing support</div>
@@ -302,11 +336,10 @@ export function Donate() {
                             setSelectedAmount(amount);
                             setCustomAmount('');
                           }}
-                          className={`p-3 rounded-lg border-2 transition-colors ${
-                            selectedAmount === amount && !customAmount
+                          className={`p-3 rounded-lg border-2 transition-colors ${selectedAmount === amount && !customAmount
                               ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
                               : 'border-gray-200 hover:border-emerald-300 text-gray-700'
-                          }`}
+                            }`}
                         >
                           R{amount}
                         </button>
@@ -343,11 +376,10 @@ export function Donate() {
                           key={project.id}
                           type="button"
                           onClick={() => setSelectedProject(project.id)}
-                          className={`w-full p-4 rounded-lg border-2 transition-colors text-left ${
-                            selectedProject === project.id
+                          className={`w-full p-4 rounded-lg border-2 transition-colors text-left ${selectedProject === project.id
                               ? 'border-emerald-600 bg-emerald-50'
                               : 'border-gray-200 hover:border-emerald-300'
-                          }`}
+                            }`}
                         >
                           <div className="flex items-start space-x-3">
                             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center text-white flex-shrink-0">

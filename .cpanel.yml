@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
-    - export REPOPATH=/home/altaawun/altaawun-website/
+    - echo "Starting deployment"
     - export DEPLOYPATH=/home/altaawun/public_html/
-    - /bin/rsync -av --delete $REPOPATH $DEPLOYPATH
+    - /bin/cp -R /home/altaawun/altaawun-website/* $DEPLOYPATH
+    - echo "Deployment finished"

@@ -1,9 +1,10 @@
 import { Heart, Droplet, GraduationCap, Shield, Lock, CheckCircle, CreditCard, Users, Star } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { useState } from 'react';
+import { SEO } from '@/components/SEO';
 
 export function Donate() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -138,6 +139,10 @@ export function Donate() {
   return (
     <div className="w-full">
       {/* Hero Section */}
+      <SEO
+        title="Donate Now"
+        description="Make a secure donation to support our programs. Your contribution helps provide clean water, education, and essential support to those in need."
+      />
       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">

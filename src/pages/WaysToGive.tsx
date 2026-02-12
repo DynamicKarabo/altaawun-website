@@ -1,15 +1,11 @@
 import { CreditCard, Building2, Package, Clock, Heart, CheckCircle, ArrowRight, Copy } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
-import { Button } from './ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
-type Page = 'home' | 'about' | 'impact' | 'values' | 'get-involved' | 'donate' | 'ways-to-give';
+import { Link } from 'react-router-dom';
 
-interface WaysToGiveProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function WaysToGive({ onNavigate }: WaysToGiveProps) {
+export function WaysToGive() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [donationModal, setDonationModal] = useState<string | null>(null);
 
@@ -17,11 +13,6 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
     navigator.clipboard.writeText(text);
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
-  };
-
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -69,13 +60,14 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                 </div>
               </div>
 
-              <Button
-                onClick={() => handleNavigate('donate')}
+              <Button asChild
                 size="lg"
                 className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
               >
-                Donate Online Now
-                <ArrowRight className="ml-2" size={20} />
+                <Link to="/donate">
+                  Donate Online Now
+                  <ArrowRight className="ml-2" size={20} />
+                </Link>
               </Button>
 
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
@@ -367,11 +359,10 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                     <span>Full training and support</span>
                   </div>
                 </div>
-                <Button
-                  onClick={() => handleNavigate('get-involved')}
+                <Button asChild
                   className="bg-white text-emerald-600 hover:bg-gray-100"
                 >
-                  Learn About Volunteering
+                  <Link to="/get-involved">Learn About Volunteering</Link>
                 </Button>
               </CardContent>
             </Card>

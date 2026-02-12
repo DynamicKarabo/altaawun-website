@@ -1,6 +1,7 @@
 import { CheckCircle, FileText, Users, Target } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
-import { FinancialChart } from './FinancialChart';
+import { Card, CardContent } from '@/components/ui/card';
+import { FinancialChart } from '@/components/FinancialChart';
+import { SEO } from '@/components/SEO';
 
 export function AboutUs() {
   const teamMembers = [
@@ -47,6 +48,10 @@ export function AboutUs() {
   return (
     <div className="w-full">
       {/* Hero Section */}
+      <SEO
+        title="About Us"
+        description="Learn about our mission, vision, and the team driving change at Al-Taawun. We are committed to transparency and impactful community service."
+      />
       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

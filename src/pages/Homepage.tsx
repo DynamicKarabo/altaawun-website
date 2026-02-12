@@ -1,47 +1,45 @@
 import { Heart, Droplet, GraduationCap, Users, ArrowRight } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ImpactTicker } from './ImpactTicker';
-import { LatestNews } from './LatestNews';
-import { Partners } from './Partners';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
+import { ImpactTicker } from '@/components/ImpactTicker';
+import { LatestNews } from '@/components/LatestNews';
+import { Partners } from '@/components/Partners';
 import { motion } from 'motion/react';
 import logoImage from 'figma:asset/6f7305cbe55ee9a90fcba9d451af24ec58c6cab1.png';
 
-type Page = 'home' | 'about' | 'impact' | 'values' | 'get-involved' | 'donate' | 'ways-to-give';
+import { Link } from 'react-router-dom';
+import { SEO } from '@/components/SEO';
 
-interface HomepageProps {
-  onNavigate: (page: Page) => void;
-}
+export function Homepage() {
 
-export function Homepage({ onNavigate }: HomepageProps) {
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div className="w-full">
+      <SEO
+        title="Home"
+        description="Al-Taawun Fi Al is a non-profit organization dedicated to community development through education, healthcare, and water projects in South Africa."
+      />
       {/* Hero Section - Passes the 3-Second Test */}
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-16 md:py-24 lg:py-32 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 opacity-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 1 }}
         >
-          <motion.div 
+          <motion.div
             className="absolute top-20 right-20 w-96 h-96 bg-[#f6a947] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               x: [0, 50, 0],
               y: [0, -30, 0]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
-          <motion.div 
+          <motion.div
             className="absolute bottom-20 left-20 w-96 h-96 bg-white rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               x: [0, -40, 0],
               y: [0, 40, 0]
@@ -49,11 +47,11 @@ export function Homepage({ onNavigate }: HomepageProps) {
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <motion.div 
+              <motion.div
                 className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -61,7 +59,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
               >
                 NPO Registration: 235-732
               </motion.div>
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl text-white"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,8 +67,8 @@ export function Homepage({ onNavigate }: HomepageProps) {
               >
                 Transforming Communities Through Compassion
               </motion.h1>
-              <motion.p 
-                className="text-xl italic text-[#f6a947]" 
+              <motion.p
+                className="text-xl italic text-[#f6a947]"
                 style={{ fontFamily: 'Georgia, serif' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -78,7 +76,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
               >
                 "Reveal Concealed Capabilities"
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg md:text-xl text-white/90"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -86,31 +84,31 @@ export function Homepage({ onNavigate }: HomepageProps) {
               >
                 Al-Taawun Fi Al is dedicated to uplifting communities across South Africa through sustainable welfare programs, clean water access, and educational initiatives.
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                <Button
-                  onClick={() => handleNavigate('donate')}
+                <Button asChild
                   size="lg"
                   className="bg-gradient-to-r from-[#f6a947] to-[#a58644] hover:from-[#a58644] hover:to-[#f6a947] text-white"
                 >
-                  Make a Donation
-                  <ArrowRight className="ml-2" size={20} />
+                  <Link to="/donate">
+                    Make a Donation
+                    <ArrowRight className="ml-2" size={20} />
+                  </Link>
                 </Button>
-                <Button
-                  onClick={() => handleNavigate('values')}
+                <Button asChild
                   size="lg"
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white/10"
                 >
-                  Our Philosophy
+                  <Link to="/values">Our Philosophy</Link>
                 </Button>
               </motion.div>
             </div>
-            <motion.div 
+            <motion.div
               className="relative flex justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -120,16 +118,16 @@ export function Homepage({ onNavigate }: HomepageProps) {
               <motion.div
                 className="relative"
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
                 }}
-                transition={{ 
+                transition={{
                   y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                 }}
               >
-                <img 
-                  src={logoImage} 
-                  alt="Al-Taawun Fi Al" 
+                <img
+                  src={logoImage}
+                  alt="Al-Taawun Fi Al"
                   className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto drop-shadow-2xl"
                 />
                 {/* Glow Effect */}
@@ -227,7 +225,7 @@ export function Homepage({ onNavigate }: HomepageProps) {
       {/* Our Impact Stories */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -338,27 +336,28 @@ export function Homepage({ onNavigate }: HomepageProps) {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Button
-              onClick={() => handleNavigate('impact')}
+            <Button asChild
               size="lg"
               className="bg-gradient-to-r from-[#19586d] to-[#3cb24a] hover:from-[#3cb24a] hover:to-[#19586d] text-white"
             >
-              Read More Impact Stories
-              <ArrowRight className="ml-2" size={20} />
+              <Link to="/impact">
+                Read More Impact Stories
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
             </Button>
           </motion.div>
         </div>
       </section>
 
       {/* Latest News & Updates */}
-      <LatestNews onNavigate={onNavigate} />
+      <LatestNews />
 
       {/* Partners Section */}
       <Partners />
@@ -373,20 +372,18 @@ export function Homepage({ onNavigate }: HomepageProps) {
               Whether through donations, volunteering, or partnerships, your support helps us create lasting change in communities across South Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => handleNavigate('donate')}
+              <Button asChild
                 size="lg"
                 className="bg-white text-[#19586d] hover:bg-gray-100"
               >
-                Donate Today
+                <Link to="/donate">Donate Today</Link>
               </Button>
-              <Button
-                onClick={() => handleNavigate('get-involved')}
+              <Button asChild
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10"
               >
-                Volunteer With Us
+                <Link to="/get-involved">Volunteer With Us</Link>
               </Button>
             </div>
           </div>

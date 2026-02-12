@@ -1,53 +1,54 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
-import { Homepage } from './components/Homepage';
-import { AboutUs } from './components/AboutUs';
-import { OurImpact } from './components/OurImpact';
-import { OurValues } from './components/OurValues';
-import { OurPrograms } from './components/OurPrograms';
-import { Gallery } from './components/Gallery';
-import { GetInvolved } from './components/GetInvolved';
-import { Donate } from './components/Donate';
-import { WaysToGive } from './components/WaysToGive';
 import { Footer } from './components/Footer';
+import { Homepage } from './pages/Homepage';
+import { AboutUs } from './pages/AboutUs';
+import { OurValues } from './pages/OurValues';
+import { OurPrograms } from './pages/OurPrograms';
+import { OurImpact } from './pages/OurImpact';
+import { Gallery } from './pages/Gallery';
+import { GetInvolved } from './pages/GetInvolved';
+import { Donate } from './pages/Donate';
+import { WaysToGive } from './pages/WaysToGive';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
-type Page = 'home' | 'about' | 'impact' | 'values' | 'programs' | 'gallery' | 'get-involved' | 'donate' | 'ways-to-give';
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Homepage onNavigate={setCurrentPage} />;
-      case 'about':
-        return <AboutUs />;
-      case 'impact':
-        return <OurImpact />;
-      case 'values':
-        return <OurValues />;
-      case 'programs':
-        return <OurPrograms />;
-      case 'gallery':
-        return <Gallery />;
-      case 'get-involved':
-        return <GetInvolved />;
-      case 'donate':
-        return <Donate />;
-      case 'ways-to-give':
-        return <WaysToGive onNavigate={setCurrentPage} />;
-      default:
-        return <Homepage onNavigate={setCurrentPage} />;
-    }
-  };
+  return null;
+}
 
+function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer onNavigate={setCurrentPage} />
-    </div>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
+          <ScrollToTop />
+          <Navigation />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/values" element={<OurValues />} />
+              <Route path="/programs" element={<OurPrograms />} />
+              <Route path="/impact" element={<OurImpact />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/get-involved" element={<GetInvolved />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/ways-to-give" element={<WaysToGive />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
+
+export default App;

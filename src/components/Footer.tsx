@@ -10,26 +10,9 @@ import {
   Music,
 } from "lucide-react";
 
-type Page =
-  | "home"
-  | "about"
-  | "impact"
-  | "values"
-  | "programs"
-  | "gallery"
-  | "get-involved"
-  | "donate"
-  | "ways-to-give";
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (page: Page) => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
-  const handleNavigate = (page: Page) => {
-    onNavigate(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+export function Footer() {
 
   return (
     <footer className="bg-[#19586d] text-white">
@@ -67,68 +50,44 @@ export function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button
-                  onClick={() => handleNavigate("home")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("about")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/about" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   About Us
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("values")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/values" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Our Values
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("programs")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/programs" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Our Programs
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("impact")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/impact" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Our Impact
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("gallery")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/gallery" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Gallery
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("get-involved")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/get-involved" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Get Involved
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleNavigate("ways-to-give")}
-                  className="text-white/70 hover:text-[#f6a947] transition-colors"
-                >
+                <Link to="/ways-to-give" className="text-white/70 hover:text-[#f6a947] transition-colors">
                   Ways to Give
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

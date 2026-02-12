@@ -1,5 +1,5 @@
 import { Users, Gift, BookOpen, Heart, Utensils, Building2, Baby, Globe, FolderKanban, MapPin } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'motion/react';
 
 export function OurImpact() {

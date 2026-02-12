@@ -4,13 +4,14 @@ import {
   Rocket, Crown, Wrench, Smile, Database, MessageCircle, Map,
   BarChart, Network, Megaphone
 } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'motion/react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { payfastConfig } from '../config/payfast';
+import { SEO } from '@/components/SEO';
 
 
 export function OurPrograms() {
@@ -313,6 +314,10 @@ export function OurPrograms() {
   return (
     <div className="w-full">
       {/* Hero Section */}
+      <SEO
+        title="Our Programs"
+        description="Explore our initiatives in Education, Water Access, Welfare, and Healthcare. See how we are making a difference in communities."
+      />
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-24 md:py-32 overflow-hidden">
         <motion.div
           className="absolute inset-0 opacity-10"

@@ -1,5 +1,5 @@
 import { Lightbulb, Users, Target, Heart, Eye, Sprout, Award, Shield } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'motion/react';
 
 export function OurValues() {

@@ -9,11 +9,44 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function GetInvolved() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@altaawunfial.org.za", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: "New Volunteer Application - Al-Taawun",
+          _template: "table"
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+
+      setFormSubmitted(true);
+      setTimeout(() => setFormSubmitted(false), 5000);
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitError("Something went wrong. Please try again later or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const volunteerOpportunities = [
@@ -185,32 +218,32 @@ export function GetInvolved() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
-                      <Input id="firstName" required className="mt-2" />
+                      <Input id="firstName" name="firstName" required className="mt-2" />
                     </div>
                     <div>
                       <Label htmlFor="lastName">Last Name *</Label>
-                      <Input id="lastName" required className="mt-2" />
+                      <Input id="lastName" name="lastName" required className="mt-2" />
                     </div>
                   </div>
 
                   <div>
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input id="email" type="email" required className="mt-2" />
+                    <Input id="email" name="email" type="email" required className="mt-2" />
                   </div>
 
                   <div>
                     <Label htmlFor="phone">Phone Number *</Label>
-                    <Input id="phone" type="tel" required className="mt-2" />
+                    <Input id="phone" name="phone" type="tel" required className="mt-2" />
                   </div>
 
                   <div>
                     <Label htmlFor="location">Location / City *</Label>
-                    <Input id="location" required className="mt-2" />
+                    <Input id="location" name="location" required className="mt-2" />
                   </div>
 
                   <div>
                     <Label htmlFor="interest">Area of Interest *</Label>
-                    <select id="interest" required className="mt-2 w-full rounded-md border border-gray-300 p-2">
+                    <select id="interest" name="interest" required className="mt-2 w-full rounded-md border border-gray-300 p-2">
                       <option value="">Select an area</option>
                       <option value="outreach">Community Outreach</option>
                       <option value="education">Educational Support</option>
@@ -221,8 +254,9 @@ export function GetInvolved() {
 
                   <div>
                     <Label htmlFor="availability">Availability</Label>
-                    <Textarea 
-                      id="availability" 
+                    <Textarea
+                      id="availability"
+                      name="availability"
                       placeholder="Tell us about your availability (days, times, frequency)"
                       className="mt-2"
                       rows={3}
@@ -231,20 +265,28 @@ export function GetInvolved() {
 
                   <div>
                     <Label htmlFor="why">Why do you want to volunteer with us?</Label>
-                    <Textarea 
-                      id="why" 
+                    <Textarea
+                      id="why"
+                      name="motivation"
                       placeholder="Share your motivation and any relevant experience"
                       className="mt-2"
                       rows={4}
                     />
                   </div>
 
-                  <Button 
+                  {submitError && (
+                    <div className="p-4 bg-red-50 text-red-600 rounded-lg text-sm">
+                      {submitError}
+                    </div>
+                  )}
+
+                  <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
                     size="lg"
+                    disabled={isSubmitting}
                   >
-                    Submit Application
+                    {isSubmitting ? 'Submitting...' : 'Submit Application'}
                   </Button>
                 </form>
               </CardContent>

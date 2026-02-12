@@ -28,7 +28,7 @@ export function FinancialChart() {
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ name, value }) => `${value}%`}
+            label={({ value }) => `${value}%`}
             outerRadius={100}
             fill="#8884d8"
             dataKey="value"
@@ -38,8 +38,8 @@ export function FinancialChart() {
             ))}
           </Pie>
           <Tooltip content={<CustomTooltip />} />
-          <Legend 
-            verticalAlign="bottom" 
+          <Legend
+            verticalAlign="bottom"
             height={36}
             formatter={(value, entry: any) => (
               <span className="text-gray-700">{value}: {entry.payload.value}%</span>

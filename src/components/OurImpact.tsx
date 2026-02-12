@@ -1,4 +1,4 @@
-import { Users, Gift, BookOpen, Heart, Utensils, Home, Shirt, Building2, Baby, Globe, FolderKanban, MapPin } from 'lucide-react';
+import { Users, Gift, BookOpen, Heart, Utensils, Building2, Baby, Globe, FolderKanban, MapPin } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { motion } from 'motion/react';
 
@@ -115,24 +115,24 @@ export function OurImpact() {
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-24 md:py-32 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 opacity-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 1 }}
         >
-          <motion.div 
+          <motion.div
             className="absolute top-20 right-20 w-64 h-64 bg-[#f6a947] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               x: [0, 50, 0],
               y: [0, -30, 0]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
-          <motion.div 
+          <motion.div
             className="absolute bottom-20 left-20 w-96 h-96 bg-[#3cb24a] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               x: [0, -40, 0],
               y: [0, 40, 0]
@@ -140,10 +140,10 @@ export function OurImpact() {
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl text-white mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export function OurImpact() {
             >
               Our Impact
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl text-white/90 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -166,7 +166,7 @@ export function OurImpact() {
       {/* Global Reach Stats */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ export function OurImpact() {
       {/* 2022 Activities */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-[#19586d]/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -265,7 +265,7 @@ export function OurImpact() {
       {/* Call to Action */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[#19586d] to-[#3cb24a] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -274,14 +274,14 @@ export function OurImpact() {
           >
             Help Us Create More Impact
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-white/90 mb-8 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Your support enables us to reach more communities, empower more individuals, 
+            Your support enables us to reach more communities, empower more individuals,
             and create lasting change across South Africa and beyond.
           </motion.p>
         </div>

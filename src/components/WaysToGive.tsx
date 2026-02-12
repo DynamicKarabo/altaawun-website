@@ -11,7 +11,7 @@ interface WaysToGiveProps {
 
 export function WaysToGive({ onNavigate }: WaysToGiveProps) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
-   const [donationModal, setDonationModal] = useState<string | null>(null);
+  const [donationModal, setDonationModal] = useState<string | null>(null);
 
   const handleCopy = (text: string, field: string) => {
     navigator.clipboard.writeText(text);
@@ -64,50 +64,50 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   <span className="text-gray-700">One-time or monthly options</span>
                 </div>
                 <div className="flex items-center space-x-3">
-  <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
-  <span className="text-gray-700">Designate your gift to specific programs</span>
-                                   </div>
-</div>
+                  <CheckCircle className="text-emerald-600 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Designate your gift to specific programs</span>
+                </div>
+              </div>
+
+              <Button
+                onClick={() => handleNavigate('donate')}
+                size="lg"
+                className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+              >
+                Donate Online Now
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                <Button
+                  onClick={() => setDonationModal('Zakat')}
+                  className="bg-white border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
+                >
+                  Give Zakat
+                </Button>
 
                 <Button
-  onClick={() => handleNavigate('donate')}
-  size="lg"
-  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
->
-  Donate Online Now
-  <ArrowRight className="ml-2" size={20} />
-</Button>
+                  onClick={() => setDonationModal('Lillah')}
+                  className="bg-white border-2 border-teal-600 text-teal-600 hover:bg-teal-50"
+                >
+                  Give Lillah
+                </Button>
 
-<div className="mt-6 flex flex-col sm:flex-row gap-4">
-  <Button
-    onClickonClick={() => setDonationModal('Zakat')}
-    className="bg-white border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50"
-  >
-    Give Zakat
-  </Button>
+                <Button
+                  onClick={() => setDonationModal('Sadaqah')}
+                  className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
+                >
+                  Give Sadaqah
+                </Button>
 
-  <Button
-    onClickonClick={() => setDonationModal('Lillah')}
-    className="bg-white border-2 border-teal-600 text-teal-600 hover:bg-teal-50"
-  >
-    Give Lillah
-  </Button>
-
-   <Button
- onClick={() => setDonationModal('Sadaqah')}
- className="bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
- >
- Give Sadaqah
- </Button>
-
-   <Button
- onClick={() => setDonationModal('Waqf')}
- className="bg-white border-2 border-orange-600 text-orange-600 hover:bg-orange-50"
- >
- Give Waqf
- </Button>
-</div>
-                               </div>
+                <Button
+                  onClick={() => setDonationModal('Waqf')}
+                  className="bg-white border-2 border-orange-600 text-orange-600 hover:bg-orange-50"
+                >
+                  Give Waqf
+                </Button>
+              </div>
+            </div>
 
 
             <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200">
@@ -158,7 +158,7 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                       </button>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-50 rounded-lg p-4">
                     <div className="text-sm text-gray-600 mb-1">Account Name</div>
                     <div className="flex items-center justify-between">
@@ -329,9 +329,9 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
                   Email: donations@altaawunfial.org.za
                 </a>
                 <a
-              href="tel:0103351773"                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors"
+                  href="tel:0103351773" className="inline-flex items-center justify-center px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg hover:bg-emerald-50 transition-colors"
                 >
-                Call: 010 335 1773                </a>
+                  Call: 010 335 1773                </a>
               </div>
             </CardContent>
           </Card>
@@ -413,7 +413,7 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl text-gray-900 mb-6">Other Ways to Support Us</h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="p-8">
@@ -471,25 +471,25 @@ export function WaysToGive({ onNavigate }: WaysToGiveProps) {
         </div>
       </section>
 
-       {donationModal && (
- <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
- <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
- <h2 className="text-2xl text-gray-900 mb-4">Give {donationModal}</h2>
- <p className="text-gray-700 mb-6">
- Thank you for choosing to give {donationModal}. We're currently setting up PayPal and Ozow payment options.
- </p>
- <p className="text-gray-600 text-sm mb-6">
- In the meantime, you can donate through our Bank Transfer or Donate Online options above.
- </p>
- <button
- onClick={() => setDonationModal(null)}
- className="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700"
- >
- Close
- </button>
- </div>
- </div>
- )}
+      {donationModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h2 className="text-2xl text-gray-900 mb-4">Give {donationModal}</h2>
+            <p className="text-gray-700 mb-6">
+              Thank you for choosing to give {donationModal}. We're currently setting up PayPal and Ozow payment options.
+            </p>
+            <p className="text-gray-600 text-sm mb-6">
+              In the meantime, you can donate through our Bank Transfer or Donate Online options above.
+            </p>
+            <button
+              onClick={() => setDonationModal(null)}
+              className="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

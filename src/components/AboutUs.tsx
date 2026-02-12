@@ -1,6 +1,5 @@
 import { CheckCircle, FileText, Users, Target } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { FinancialChart } from './FinancialChart';
 
 export function AboutUs() {
@@ -24,7 +23,7 @@ export function AboutUs() {
       name: 'Momie Morgan',
       role: 'Chief Operating Officer',
       bio: 'Experienced leader overseeing daily operations, ensuring program effectiveness, and driving organizational efficiency to maximize impact across communities.'
-  }
+    }
   ];
 
   const values = [
@@ -73,7 +72,7 @@ export function AboutUs() {
               <p className="text-lg text-gray-700 mb-6">
                 Al-Taawun Fi Al is a registered NPO with the South African Department of Social Development, ensuring full legal compliance and accountability.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="text-emerald-600 flex-shrink-0 mt-1" size={20} />
@@ -100,21 +99,21 @@ export function AboutUs() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/2024-Annual-Report.pdf?raw=true" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
->
+                  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/2024-Annual-Report.pdf?raw=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
+                >
 
                   <FileText size={20} className="mr-2" />
                   2024 Annual Report
                 </a>
                 <a
-  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/Financial-Statements.pdf?raw=true" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
->
+                  href="https://github.com/DynamicKarabo/altaawun-website/blob/main/public/pdfs/Financial-Statements.pdf?raw=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-emerald-50 text-emerald-700 rounded-lg hover:bg-emerald-100 transition-colors"
+                >
 
                   <FileText size={20} className="mr-2" />
                   Financial Statements

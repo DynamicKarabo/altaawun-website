@@ -1,4 +1,4 @@
-import { Heart, Droplet, GraduationCap, Shield, Lock, CheckCircle, CreditCard, DollarSign, Users, Star } from 'lucide-react';
+import { Heart, Droplet, GraduationCap, Shield, Lock, CheckCircle, CreditCard, Users, Star } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -301,8 +301,8 @@ export function Donate() {
                         type="button"
                         onClick={() => setSelectedFrequency('once')}
                         className={`p-4 rounded-lg border-2 transition-colors ${selectedFrequency === 'once'
-                            ? 'border-emerald-600 bg-emerald-50'
-                            : 'border-gray-200 hover:border-emerald-300'
+                          ? 'border-emerald-600 bg-emerald-50'
+                          : 'border-gray-200 hover:border-emerald-300'
                           }`}
                       >
                         <div className="text-lg text-gray-900">One-Time</div>
@@ -312,8 +312,8 @@ export function Donate() {
                         type="button"
                         onClick={() => setSelectedFrequency('monthly')}
                         className={`p-4 rounded-lg border-2 transition-colors ${selectedFrequency === 'monthly'
-                            ? 'border-emerald-600 bg-emerald-50'
-                            : 'border-gray-200 hover:border-emerald-300'
+                          ? 'border-emerald-600 bg-emerald-50'
+                          : 'border-gray-200 hover:border-emerald-300'
                           }`}
                       >
                         <div className="text-lg text-gray-900">Monthly</div>
@@ -337,8 +337,8 @@ export function Donate() {
                             setCustomAmount('');
                           }}
                           className={`p-3 rounded-lg border-2 transition-colors ${selectedAmount === amount && !customAmount
-                              ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
-                              : 'border-gray-200 hover:border-emerald-300 text-gray-700'
+                            ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                            : 'border-gray-200 hover:border-emerald-300 text-gray-700'
                             }`}
                         >
                           R{amount}
@@ -377,8 +377,8 @@ export function Donate() {
                           type="button"
                           onClick={() => setSelectedProject(project.id)}
                           className={`w-full p-4 rounded-lg border-2 transition-colors text-left ${selectedProject === project.id
-                              ? 'border-emerald-600 bg-emerald-50'
-                              : 'border-gray-200 hover:border-emerald-300'
+                            ? 'border-emerald-600 bg-emerald-50'
+                            : 'border-gray-200 hover:border-emerald-300'
                             }`}
                         >
                           <div className="flex items-start space-x-3">

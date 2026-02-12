@@ -1,6 +1,7 @@
 import { Users, Gift, BookOpen, Heart, Utensils, Building2, Baby, Globe, FolderKanban, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'motion/react';
+import { SEO } from '@/components/SEO';
 
 export function OurImpact() {
   const globalReach = [
@@ -113,6 +114,10 @@ export function OurImpact() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Our Impact"
+        description="See the tangible difference we make. From water projects to education and healthcare, explore our impact across South Africa."
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-24 md:py-32 overflow-hidden">
         <motion.div

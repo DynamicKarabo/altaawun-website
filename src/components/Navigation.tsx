@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'motion/react';
-import logoImage from 'figma:asset/6f7305cbe55ee9a90fcba9d451af24ec58c6cab1.png';
+import logoImage from '@/assets/logo.webp';
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

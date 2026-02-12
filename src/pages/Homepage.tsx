@@ -7,7 +7,7 @@ import { ImpactTicker } from '@/components/ImpactTicker';
 import { LatestNews } from '@/components/LatestNews';
 import { Partners } from '@/components/Partners';
 import { motion } from 'motion/react';
-import logoImage from 'figma:asset/6f7305cbe55ee9a90fcba9d451af24ec58c6cab1.png';
+import logoImage from '@/assets/logo.webp';
 
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';

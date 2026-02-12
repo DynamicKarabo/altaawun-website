@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
 export function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -12,7 +13,7 @@ export function Gallery() {
       url: 'https://i.postimg.cc/wjRSXSmP/Whats-App-Image-2025-11-12-at-13-27-08.jpg',
       alt: '',
       title: ''
-      
+
     },
     {
       url: 'https://i.postimg.cc/7Y0bWPfd/IMG-0899.jpg',
@@ -60,12 +61,12 @@ export function Gallery() {
       title: ''
     },
     {
-      url: 'https://i.postimg.cc/LX5VwsgZ/Whats-App-Image-2025-11-17-at-13-42-30.jpg', 
+      url: 'https://i.postimg.cc/LX5VwsgZ/Whats-App-Image-2025-11-17-at-13-42-30.jpg',
       alt: '',
       title: ''
     },
     {
-      url: 'https://i.postimg.cc/d0HfLp85/Whats-App-Image-2025-11-17-at-13-42-30-(1).jpg', 
+      url: 'https://i.postimg.cc/d0HfLp85/Whats-App-Image-2025-11-17-at-13-42-30-(1).jpg',
       alt: '',
       title: ''
     },
@@ -73,7 +74,7 @@ export function Gallery() {
       url: 'https://i.postimg.cc/76wkHwZj/Whats-App-Image-2025-11-17-at-13-27-45.jpg',
       alt: '',
       title: ''
-    }, 
+    },
     {
       url: 'https://i.postimg.cc/PNGKHrtY/Whats-App-Image-2025-11-17-at-13-30-02.jpg',
       alt: '',
@@ -81,7 +82,7 @@ export function Gallery() {
     },
     {
       url: 'https://i.postimg.cc/brrm4Tcd/Whats-App-Image-2025-11-26-at-10-11-51.jpg',
-    }, 
+    },
     {
       url: 'https://i.postimg.cc/FzZ3K5LW/Whats-App-Image-2025-11-17-at-13-40-39.jpg',
       alt: '',
@@ -91,26 +92,30 @@ export function Gallery() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Gallery"
+        description="Visual stories of hope and transformation. Browse images from our projects and events across South Africa."
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#19586d] via-[#3cb24a] to-[#a58644] py-24 md:py-32 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 opacity-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.1 }}
           transition={{ duration: 1 }}
         >
-          <motion.div 
+          <motion.div
             className="absolute top-20 right-20 w-64 h-64 bg-[#f6a947] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
               x: [0, 50, 0],
               y: [0, -30, 0]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
-          <motion.div 
+          <motion.div
             className="absolute bottom-20 left-20 w-96 h-96 bg-[#3cb24a] rounded-full blur-3xl"
-            animate={{ 
+            animate={{
               scale: [1, 1.3, 1],
               x: [0, -40, 0],
               y: [0, 40, 0]
@@ -118,10 +123,10 @@ export function Gallery() {
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
         </motion.div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl text-white mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -129,7 +134,7 @@ export function Gallery() {
             >
               Our Gallery
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl text-white/90 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -174,7 +179,7 @@ export function Gallery() {
 
       {/* Lightbox Modal */}
       {selectedImage !== null && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >

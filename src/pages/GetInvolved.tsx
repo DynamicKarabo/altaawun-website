@@ -1,4 +1,4 @@
-import { Users, HandHeart, Building2, Calendar, Mail, Phone, MapPin, CheckCircle, GraduationCap } from 'lucide-react';
+import { Calendar, Mail, Phone, MapPin, CheckCircle, Building2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +6,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
+import { SEO } from '@/components/SEO';
+import { volunteerOpportunities, partnershipOptions } from '@/data/involved';
 
 export function GetInvolved() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -49,53 +51,12 @@ export function GetInvolved() {
     }
   };
 
-  const volunteerOpportunities = [
-    {
-      icon: <HandHeart size={24} />,
-      title: 'Community Outreach',
-      description: 'Help distribute food parcels and supplies to families in need',
-      commitment: 'Flexible hours, weekends available'
-    },
-    {
-      icon: <GraduationCap size={24} />,
-      title: 'Educational Support',
-      description: 'Tutor students or assist with literacy programs',
-      commitment: '2-4 hours per week'
-    },
-    {
-      icon: <Users size={24} />,
-      title: 'Event Volunteers',
-      description: 'Support fundraising events and community gatherings',
-      commitment: 'As needed, event-based'
-    },
-    {
-      icon: <Building2 size={24} />,
-      title: 'Professional Skills',
-      description: 'Share your expertise in accounting, marketing, IT, or other areas',
-      commitment: 'Project-based'
-    }
-  ];
-
-  const partnershipOptions = [
-    {
-      title: 'Corporate Partnerships',
-      description: 'Collaborate with us on CSI initiatives and employee engagement programs',
-      benefits: ['Tax benefits', 'Brand visibility', 'Employee volunteering']
-    },
-    {
-      title: 'School & University Partners',
-      description: 'Partner on educational programs and student volunteering opportunities',
-      benefits: ['Service learning', 'Community engagement', 'Research opportunities']
-    },
-    {
-      title: 'Faith-Based Organizations',
-      description: 'Join us in serving communities through collaborative projects',
-      benefits: ['Shared mission', 'Resource pooling', 'Greater impact']
-    }
-  ];
-
   return (
     <div className="w-full">
+      <SEO
+        title="Get Involved"
+        description="Join Al-Taawun Fi Al as a volunteer or partner. Use your skills and passion to help us transform communities across South Africa."
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,7 +105,7 @@ export function GetInvolved() {
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                      {opportunity.icon}
+                      <opportunity.icon size={24} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl text-gray-900 mb-2">{opportunity.title}</h3>

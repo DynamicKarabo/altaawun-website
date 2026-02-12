@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import { SEO } from '@/components/SEO';
 
 export function WaysToGive() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
@@ -17,6 +18,10 @@ export function WaysToGive() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Ways to Give"
+        description="Support Al-Taawun Fi Al through various giving options. From EFT to Zakah and project-specific donations, every contribution counts."
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

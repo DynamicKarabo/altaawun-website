@@ -10,6 +10,7 @@ import { Gallery } from './pages/Gallery';
 import { GetInvolved } from './pages/GetInvolved';
 import { Donate } from './pages/Donate';
 import { WaysToGive } from './pages/WaysToGive';
+import { NotFound } from './pages/NotFound';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -42,6 +43,7 @@ function App() {
               <Route path="/get-involved" element={<GetInvolved />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/ways-to-give" element={<WaysToGive />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />

@@ -1,3 +1,4 @@
+// import { Heart, Droplet, GraduationCap, Users, ArrowRight } from 'lucide-react'; // Removing specific icons if unused, but keep generic ones
 import { Heart, Droplet, GraduationCap, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,12 +11,14 @@ import logoImage from 'figma:asset/6f7305cbe55ee9a90fcba9d451af24ec58c6cab1.png'
 
 import { Link } from 'react-router-dom';
 import { SEO } from '@/components/SEO';
+import { impactStories } from '@/data/testimonials';
 
 export function Homepage() {
 
 
   return (
     <div className="w-full">
+
       <SEO
         title="Home"
         description="Al-Taawun Fi Al is a non-profit organization dedicated to community development through education, healthcare, and water projects in South Africa."
@@ -239,101 +242,39 @@ export function Homepage() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Water Impact Story */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
-                <div className="h-48 overflow-hidden">
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1760873059715-7c7cfbe2a2c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3YXRlciUyMGJvcmVob2xlJTIwYWZyaWNhfGVufDF8fHx8MTc2MjkzMzExOXww&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Water project in Limpopo"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#19586d] to-[#3cb24a] rounded-xl flex items-center justify-center text-white mb-4">
-                    <Droplet size={24} />
+            {impactStories.map((story, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
+                  <div className="h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={story.image}
+                      alt={story.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <h3 className="text-xl text-gray-900 mb-3">Clean Water Transforms Village</h3>
-                  <p className="text-gray-600 mb-4">
-                    "My daughters can now attend school every day. Before the borehole, they had to help fetch water and often missed classes."
-                  </p>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-[#19586d]">Nomsa, Thembisa Village</span>
-                    <span className="text-gray-500">340 people served</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Education Impact Story */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
-                <div className="h-48 overflow-hidden">
-                  <ImageWithFallback
-                    src="https://i.postimg.cc/d31txcNx/Whats-App-Image-2025-11-20-at-10-23-17.jpg"
-                    alt="Student success story"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#f6a947] to-[#a58644] rounded-xl flex items-center justify-center text-white mb-4">
-                    <GraduationCap size={24} />
-                  </div>
-                  <h3 className="text-xl text-gray-900 mb-3">From Bursary to Teacher</h3>
-                  <p className="text-gray-600 mb-4">
-                    "I thought university was just a dream. The bursary made it possible. I'm now studying to be a teacher to help my community."
-                  </p>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-[#a58644]">Sipho, Education Student</span>
-                    <span className="text-gray-500">45 bursaries awarded</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Welfare Impact Story */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <Card className="overflow-hidden h-full hover:shadow-2xl transition-shadow">
-                <div className="h-48 overflow-hidden">
-                  <ImageWithFallback
-                    src="https://i.postimg.cc/hjHMvKFV/Whats-App-Image-2025-11-20-at-10-29-51.jpg"
-                    alt="Feeding program impact"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#3cb24a] to-[#19586d] rounded-xl flex items-center justify-center text-white mb-4">
-                    <Heart size={24} />
-                  </div>
-                  <h3 className="text-xl text-gray-900 mb-3">Nourishing Families with Dignity</h3>
-                  <p className="text-gray-600 mb-4">
-                    "I know my children get a warm, healthy meal every day. It gives me peace of mind as I work to provide for them."
-                  </p>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-[#3cb24a]">Grace, Soweto</span>
-                    <span className="text-gray-500">2,400 children fed daily</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                  <CardContent className="p-6">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${story.gradient} rounded-xl flex items-center justify-center text-white mb-4`}>
+                      <story.icon size={24} />
+                    </div>
+                    <h3 className="text-xl text-gray-900 mb-3">{story.title}</h3>
+                    <p className="text-gray-600 mb-4">
+                      {story.quote}
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className={story.colorClass}>{story.author}</span>
+                      <span className="text-gray-500">{story.stat}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
 
           <motion.div
@@ -353,17 +294,17 @@ export function Homepage() {
               </Link>
             </Button>
           </motion.div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* Latest News & Updates */}
-      <LatestNews />
+      < LatestNews />
 
       {/* Partners Section */}
-      <Partners />
+      < Partners />
 
       {/* Call to Action */}
-      <section className="py-16 md:py-24 bg-white">
+      < section className="py-16 md:py-24 bg-white" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#19586d] to-[#3cb24a] rounded-3xl p-8 md:p-12 lg:p-16 text-white text-center">
             <Users className="mx-auto mb-6" size={48} />
@@ -388,7 +329,7 @@ export function Homepage() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }

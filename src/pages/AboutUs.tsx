@@ -1,49 +1,12 @@
-import { CheckCircle, FileText, Users, Target } from 'lucide-react';
+// import { CheckCircle, FileText, Users, Target } from 'lucide-react'; // Removing unused now
+import { CheckCircle, FileText } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { FinancialChart } from '@/components/FinancialChart';
 import { SEO } from '@/components/SEO';
+import { teamMembers, values } from '@/data/about';
 
 export function AboutUs() {
-  const teamMembers = [
-    {
-      name: 'Hawa Moses',
-      role: 'Chief Executive Officer',
-      bio: '15+ Years in Community Development'
-    },
-    {
-      name: 'Hassim Phosa',
-      role: 'Head of Strategic Planning, Marketing and Communication',
-      bio: 'Expert in Leading Philanthropic Marketing Initiatives'
-    },
-    {
-      name: 'Jubeira Moses',
-      role: 'Chief Financial Officer',
-      bio: 'Former Educator with 10+ Years Experience'
-    },
-    {
-      name: 'Momie Morgan',
-      role: 'Chief Operating Officer',
-      bio: 'Experienced leader overseeing daily operations, ensuring program effectiveness, and driving organizational efficiency to maximize impact across communities.'
-    }
-  ];
 
-  const values = [
-    {
-      icon: <Target size={24} />,
-      title: 'Transparency',
-      description: 'We maintain open communication about our finances, operations, and impact with all stakeholders.'
-    },
-    {
-      icon: <Users size={24} />,
-      title: 'Community-Centered',
-      description: 'Local voices guide our programs. We work with communities, not for them.'
-    },
-    {
-      icon: <CheckCircle size={24} />,
-      title: 'Accountability',
-      description: 'Every donation is tracked and reported. We are accountable to our donors and beneficiaries.'
-    }
-  ];
 
   return (
     <div className="w-full">
@@ -196,7 +159,7 @@ export function AboutUs() {
               <Card key={index} className="border-2 hover:border-emerald-500 transition-colors">
                 <CardContent className="p-6 text-center">
                   <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white mx-auto mb-4">
-                    {value.icon}
+                    <value.icon size={24} />
                   </div>
                   <h3 className="text-xl text-gray-900 mb-3">{value.title}</h3>
                   <p className="text-gray-600">{value.description}</p>

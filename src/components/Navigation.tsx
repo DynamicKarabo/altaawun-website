@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { AnimatePresence, motion } from 'motion/react';
 import logoImage from 'figma:asset/6f7305cbe55ee9a90fcba9d451af24ec58c6cab1.png';
 
 export function Navigation() {
@@ -19,7 +20,7 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
@@ -73,31 +74,39 @@ export function Navigation() {
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-        </div >
+        </div>
 
         {/* Mobile Menu */}
-        {
-          mobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-200">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `block w-full text-left px-4 py-3 transition-colors ${isActive
-                      ? 'text-[#19586d] bg-[#19586d]/5 font-medium'
-                      : 'text-gray-700 hover:bg-gray-50'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-            </div>
-          )
-        }
-      </div >
-    </nav >
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="lg:hidden border-t border-gray-200 overflow-hidden"
+            >
+              <div className="py-4">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `block w-full text-left px-4 py-3 transition-colors ${isActive
+                        ? 'text-[#19586d] bg-[#19586d]/5 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </nav>
   );
 }

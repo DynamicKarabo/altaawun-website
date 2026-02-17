@@ -278,8 +278,10 @@ export function Footer() {
                 <Twitter size={20} />
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/altaawunfial/"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -317,7 +319,7 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
-              © 2025 Al-Taawun Fi Al. All rights reserved.
+              © 2026 Al-Taawun Fi Al. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a

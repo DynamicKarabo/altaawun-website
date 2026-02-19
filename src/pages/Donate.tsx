@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { SEO } from '@/components/SEO';
 
@@ -12,6 +13,8 @@ export function Donate() {
   const [selectedFrequency, setSelectedFrequency] = useState<'once' | 'monthly'>('once');
   const [selectedProject, setSelectedProject] = useState<string>('general');
   const [donationComplete, setDonationComplete] = useState(false);
+  const [showPayshapModal, setShowPayshapModal] = useState(false);
+  const [showOzowModal, setShowOzowModal] = useState(false);
 
   const presetAmounts = [100, 250, 500, 1000, 2500, 5000];
 
@@ -433,7 +436,7 @@ export function Donate() {
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="text-xl text-gray-900 mb-4">Payment Information</h3>
-                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6">
                       <div className="flex items-start space-x-3">
                         <Lock className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} />
                         <div className="text-sm text-gray-700">
@@ -441,6 +444,47 @@ export function Donate() {
                         </div>
                       </div>
                     </div>
+
+                    {/* Payment Method Options */}
+                    <h4 className="text-lg text-gray-900 mb-4">Select Payment Method</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                      {/* Credit Card Option */}
+                      <div className="p-4 rounded-lg border-2 border-emerald-600 bg-emerald-50">
+                        <CreditCard className="text-emerald-600 mb-2" size={24} />
+                        <div className="text-sm text-gray-900">Card Payment</div>
+                      </div>
+
+                      {/* Payshap Option */}
+                      <button
+                        type="button"
+                        onClick={() => setShowPayshapModal(true)}
+                        className="p-4 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-colors flex flex-col items-center justify-center cursor-pointer"
+                      >
+                        <img
+                          src="https://i.postimg.cc/mD91P5K0/output-onlinepngtools.png"
+                          alt="Payshap"
+                          className="h-12 mb-2 object-contain"
+                        />
+                        <div className="text-sm text-gray-900">Payshap</div>
+                      </button>
+
+                      {/* Ozow Option */}
+                      <button
+                        type="button"
+                        onClick={() => setShowOzowModal(true)}
+                        className="p-4 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-colors flex flex-col items-center justify-center cursor-pointer"
+                      >
+                        <img
+                          src="https://i.postimg.cc/7YGdfMLb/6491490c213c45a9d600d387-ozow-small-xs.png"
+                          alt="Ozow"
+                          className="h-12 mb-2 object-contain"
+                        />
+                        <div className="text-sm text-gray-900">Ozow</div>
+                      </button>
+                    </div>
+
+                    {/* Credit Card Fields */}
+                    <h4 className="text-lg text-gray-900 mb-4">Card Details</h4>
                     <div className="space-y-4">
                       <div>
                         <Label htmlFor="cardNumber">Card Number</Label>
@@ -558,6 +602,66 @@ export function Donate() {
           </div>
         </div>
       </section>
+
+      {/* Payshap Modal */}
+      <Dialog open={showPayshapModal} onOpenChange={setShowPayshapModal}>
+        <DialogContent className="sm:max-w-[400px]">
+          <DialogHeader>
+            <DialogTitle className="text-center">Payshap Payment</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src="https://i.postimg.cc/mD91P5K0/output-onlinepngtools.png"
+              alt="Payshap"
+              className="h-16 object-contain"
+            />
+            <div className="text-center">
+              <p className="text-gray-700 mb-4">
+                We are still integrating a Payshap gateway. We'll have this available soon!
+              </p>
+              <p className="text-sm text-gray-600">
+                In the meantime, please use one of our other payment methods.
+              </p>
+            </div>
+            <Button
+              onClick={() => setShowPayshapModal(false)}
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Ozow Modal */}
+      <Dialog open={showOzowModal} onOpenChange={setShowOzowModal}>
+        <DialogContent className="sm:max-w-[400px]">
+          <DialogHeader>
+            <DialogTitle className="text-center">Ozow Payment</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center gap-6">
+            <img
+              src="https://i.postimg.cc/7YGdfMLb/6491490c213c45a9d600d387-ozow-small-xs.png"
+              alt="Ozow"
+              className="h-16 object-contain"
+            />
+            <div className="text-center">
+              <p className="text-gray-700 mb-4">
+                We are still integrating an Ozow gateway. We'll have this available soon!
+              </p>
+              <p className="text-sm text-gray-600">
+                In the meantime, please use one of our other payment methods.
+              </p>
+            </div>
+            <Button
+              onClick={() => setShowOzowModal(false)}
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

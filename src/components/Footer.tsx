@@ -3,9 +3,7 @@ import {
   Phone,
   MapPin,
   Facebook,
-  Twitter,
   Instagram,
-  Linkedin,
   MessageCircle,
   Music,
 } from "lucide-react";
@@ -264,18 +262,13 @@ export function Footer() {
             </p>
             <div className="flex space-x-3">
               <a
-                href=""
+                href="https://web.facebook.com/profile.php?id=61588060213775"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
-              </a>
-              <a
-                href=""
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
               </a>
               <a
                 href="https://www.instagram.com/altaawunfial/"
@@ -285,13 +278,6 @@ export function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
-              </a>
-              <a
-                href=""
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-emerald-600 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
               </a>
               <a
                 href="https://wa.link/26h8zj"

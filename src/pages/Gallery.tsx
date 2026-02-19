@@ -87,6 +87,56 @@ export function Gallery() {
       url: 'https://i.postimg.cc/FzZ3K5LW/Whats-App-Image-2025-11-17-at-13-40-39.jpg',
       alt: '',
       title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/pL3Sf9pw/IMG-20251126-WA0145.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/x1X7NGTv/IMG-20251126-WA0160.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/dVgf27Ln/IMG-20251126-WA0167.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/T3BsVypN/IMG-20251126-WA0170.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/4xj06Km1/IMG-20251126-WA0173.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/L8GWtqn7/IMG-20251126-WA0175.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/y82GmJkt/IMG-20251126-WA0176.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/pL3Sf9mM/IMG-20251126-WA0181.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/8zxYRF7G/IMG-20251126-WA0182.jpg',
+      alt: '',
+      title: ''
+    },
+    {
+      url: 'https://i.postimg.cc/7ZjR3C5D/IMG-20251126-WA0183.jpg',
+      alt: '',
+      title: ''
     }
   ];
 

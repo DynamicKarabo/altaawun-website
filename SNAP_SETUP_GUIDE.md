@@ -86,7 +86,7 @@ needed.
 
 You can support additional payment methods by adding new modals/handlers to
 `Donate.tsx` and, if needed, configuration files analogous to
-`snap.ts`. For PayPal in particular there is a separate guide (`PAYPAL_SETUP_GUIDE.md`) that explains how to drop the SDK script into the page and render a hosted button.
+`snap.ts`. For PayPal in particular there is a separate guide (`PAYPAL_SETUP_GUIDE.md`) that explains how to drop the SDK script into the page, render a dynamically‑generated donation button, or – as the current project uses – simply redirect donors straight to a PayPal link after they enter an amount. The guide covers both approaches.
 
 ---
 

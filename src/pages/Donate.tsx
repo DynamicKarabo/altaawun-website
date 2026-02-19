@@ -18,14 +18,21 @@ export function Donate() {
   const [selectedProject, setSelectedProject] = useState<string>('general');
   const [donationComplete, setDonationComplete] = useState(false);
   const [showPayshapModal, setShowPayshapModal] = useState(false);
-  const [showPaypalModal, setShowPaypalModal] = useState(false);
+
+  // modal that prompts the user for an amount before opening a gateway
+  const [showAmountModal, setShowAmountModal] = useState(false);
+  const [pendingGateway, setPendingGateway] = useState<'paypal' | 'snap' | null>(null);
 
   // SnapScan state
   const [snapLink, setSnapLink] = useState('');
   const [snapQrSrc, setSnapQrSrc] = useState('');
 
-  // PayPal hosted button ID (configure with your own value)
-  const paypalHostedId = 'XKFBH478C5CDU';
+  // Currency code used for PayPal donations (adjust as needed)
+  const paypalCurrency = 'ZAR';
+  // PayPal hosted button ID or link identifier (used for direct URL redirects).
+  // If you prefer to use the SDK buttons you can ignore this and enable the
+  // modal logic below instead.
+  const paypalHostedId = '4USUEJSWZTL26';
 
   const presetAmounts = [100, 250, 500, 1000, 2500, 5000];
 
@@ -110,6 +117,29 @@ export function Donate() {
     return selectedAmount || 0;
   };
 
+  // when a gateway button is clicked we first ask the user for an amount,
+  // then show the appropriate gateway modal
+  const handleAmountConfirm = () => {
+    const amt = getCurrentAmount();
+    if (!amt) {
+      alert('Please select or enter a donation amount.');
+      return;
+    }
+    setShowAmountModal(false);
+    if (pendingGateway === 'paypal') {
+      // redirect straight to PayPal donation page using hosted button id
+      // note: the hosted button can be configured in PayPal to allow the
+      // donor to change the amount or you can append &amount=XX to override
+      // the default. If you don’t have a hosted button, you could instead
+      // invoke the JS SDK like before and render a button.
+      const url = `https://www.paypal.com/donate?hosted_button_id=${paypalHostedId}&currency_code=${paypalCurrency}&amount=${amt.toFixed(2)}`;
+      window.location.href = url;
+    } else if (pendingGateway === 'snap') {
+      setShowPayshapModal(true);
+    }
+    setPendingGateway(null);
+  };
+
   // update snap link/QR whenever amount or config changes
   useEffect(() => {
     if (!snapConfig.enabled || !snapConfig.snapId) {
@@ -128,14 +158,6 @@ export function Donate() {
     );
   }, [selectedAmount, customAmount, snapConfig.snapId, snapConfig.enabled]);
 
-  // render PayPal hosted button when the modal opens
-  useEffect(() => {
-    if (showPaypalModal && paypalHostedId && (window as any).paypal) {
-      (window as any).paypal.HostedButtons({
-        hostedButtonId: paypalHostedId,
-      }).render(`#paypal-container-${paypalHostedId}`);
-    }
-  }, [showPaypalModal, paypalHostedId]);
 
   if (donationComplete) {
     return (
@@ -380,10 +402,11 @@ export function Donate() {
                             setSelectedAmount(amount);
                             setCustomAmount('');
                           }}
-                          className={`p-3 rounded-lg border-2 transition-colors ${selectedAmount === amount && !customAmount
-                            ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
-                            : 'border-gray-200 hover:border-emerald-300 text-gray-700'
-                            }`}
+                          className={`p-3 rounded-lg border-2 transition-colors flex items-center justify-center min-w-[72px] whitespace-nowrap ${
+                            selectedAmount === amount && !customAmount
+                              ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                              : 'border-gray-200 hover:border-emerald-300 text-gray-700'
+                          }`}
                         >
                           R{amount}
                         </button>
@@ -497,7 +520,11 @@ export function Donate() {
                         title={!snapConfig.enabled || !snapConfig.snapId ? 'Configure Payshap to enable' : ''}
                         onClick={() => {
                           if (snapConfig.enabled && snapConfig.snapId) {
-                            setShowPayshapModal(true);
+                            // open amount prompt first
+                            setPendingGateway('snap');
+                            setSelectedAmount(null);
+                            setCustomAmount('');
+                            setShowAmountModal(true);
                           } else {
                             alert('Payshap has not been configured yet.');
                           }
@@ -515,7 +542,13 @@ export function Donate() {
                       {/* PayPal Option */}
                       <button
                         type="button"
-                        onClick={() => setShowPaypalModal(true)}
+                        onClick={() => {
+                          // clear any prior selection and prompt for amount
+                          setSelectedAmount(null);
+                          setCustomAmount('');
+                          setPendingGateway('paypal');
+                          setShowAmountModal(true);
+                        }}
                         className="p-4 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-colors flex flex-col items-center justify-center cursor-pointer"
                       >
                         <img
@@ -647,6 +680,64 @@ export function Donate() {
         </div>
       </section>
 
+      {/* Amount Prompt Modal - used before opening any gateway */}
+      <Dialog open={showAmountModal} onOpenChange={(open) => {
+        setShowAmountModal(open);
+        if (!open) setPendingGateway(null);
+      }}>
+        <DialogContent className="sm:max-w-[400px]">
+          <DialogHeader>
+            <DialogTitle className="text-center">Enter Donation Amount</DialogTitle>
+          </DialogHeader>
+          <div className="p-4">
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-4">
+              {presetAmounts.map((amount) => (
+                <button
+                  key={amount}
+                  type="button"
+                  onClick={() => {
+                    setSelectedAmount(amount);
+                    setCustomAmount('');
+                  }}
+                  className={`p-3 rounded-lg border-2 transition-colors flex items-center justify-center min-w-[72px] whitespace-nowrap ${
+                    selectedAmount === amount && !customAmount
+                      ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
+                      : 'border-gray-200 hover:border-emerald-300 text-gray-700'
+                  }`}
+                >
+                  R{amount}
+                </button>
+              ))}
+            </div>
+            <div className="mb-4">
+              <Label htmlFor="modalCustomAmount">Or enter custom amount</Label>
+              <div className="relative mt-2">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">R</span>
+                <Input
+                  id="modalCustomAmount"
+                  type="number"
+                  min="10"
+                  placeholder="0.00"
+                  value={customAmount}
+                  onChange={(e) => {
+                    setCustomAmount(e.target.value);
+                    setSelectedAmount(null);
+                  }}
+                  className="pl-8"
+                />
+              </div>
+            </div>
+            <Button
+              onClick={handleAmountConfirm}
+              disabled={!getCurrentAmount()}
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+            >
+              Continue
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       {/* Payshap Modal (SnapScan) */}
       <Dialog open={showPayshapModal} onOpenChange={setShowPayshapModal}>
         <DialogContent className="sm:max-w-[400px]">
@@ -686,26 +777,6 @@ export function Donate() {
         </DialogContent>
       </Dialog>
 
-      {/* PayPal Modal */}
-      <Dialog open={showPaypalModal} onOpenChange={setShowPaypalModal}>
-        <DialogContent className="sm:max-w-[400px]">
-          <DialogHeader>
-            <DialogTitle className="text-center">Pay with PayPal</DialogTitle>
-          </DialogHeader>
-          <div className="flex flex-col items-center gap-6">
-            <div id={`paypal-container-${paypalHostedId}`} className="w-full"></div>
-            <p className="text-gray-700 text-center">
-              Complete your donation using PayPal.
-            </p>
-            <Button
-              onClick={() => setShowPaypalModal(false)}
-              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
-            >
-              Close
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

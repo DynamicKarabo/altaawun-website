@@ -116,6 +116,11 @@ import { SiPaypal, SiVisa, SiMastercard } from 'react-icons/si';
 {paymentMethod === 'paypal' && <SiPaypal className="text-2xl text-blue-500" />}
 ```
 
+> **PayPal integration:** once you choose PayPal as an option, refer to
+> `PAYPAL_SETUP_GUIDE.md` for the script snippet and rendering instructions.  
+> It explains where to place the SDK tag and how to render the hosted button in
+your donations modal.
+
 ---
 
 ## STEP 4: Add Environment Variables to Vercel

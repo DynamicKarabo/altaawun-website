@@ -18,11 +18,14 @@ export function Donate() {
   const [selectedProject, setSelectedProject] = useState<string>('general');
   const [donationComplete, setDonationComplete] = useState(false);
   const [showPayshapModal, setShowPayshapModal] = useState(false);
-  const [showOzowModal, setShowOzowModal] = useState(false);
+  const [showPaypalModal, setShowPaypalModal] = useState(false);
 
   // SnapScan state
   const [snapLink, setSnapLink] = useState('');
   const [snapQrSrc, setSnapQrSrc] = useState('');
+
+  // PayPal hosted button ID (configure with your own value)
+  const paypalHostedId = 'XKFBH478C5CDU';
 
   const presetAmounts = [100, 250, 500, 1000, 2500, 5000];
 
@@ -124,6 +127,15 @@ export function Donate() {
       )}`
     );
   }, [selectedAmount, customAmount, snapConfig.snapId, snapConfig.enabled]);
+
+  // render PayPal hosted button when the modal opens
+  useEffect(() => {
+    if (showPaypalModal && paypalHostedId && (window as any).paypal) {
+      (window as any).paypal.HostedButtons({
+        hostedButtonId: paypalHostedId,
+      }).render(`#paypal-container-${paypalHostedId}`);
+    }
+  }, [showPaypalModal, paypalHostedId]);
 
   if (donationComplete) {
     return (
@@ -500,18 +512,18 @@ export function Donate() {
                         <div className="text-sm text-gray-900">Payshap</div>
                       </button>
 
-                      {/* Ozow Option */}
+                      {/* PayPal Option */}
                       <button
                         type="button"
-                        onClick={() => setShowOzowModal(true)}
+                        onClick={() => setShowPaypalModal(true)}
                         className="p-4 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-colors flex flex-col items-center justify-center cursor-pointer"
                       >
                         <img
-                          src="https://i.postimg.cc/7YGdfMLb/6491490c213c45a9d600d387-ozow-small-xs.png"
-                          alt="Ozow"
+                          src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png"
+                          alt="PayPal"
                           className="h-12 mb-2 object-contain"
                         />
-                        <div className="text-sm text-gray-900">Ozow</div>
+                        <div className="text-sm text-gray-900">PayPal</div>
                       </button>
                     </div>
 
@@ -674,28 +686,19 @@ export function Donate() {
         </DialogContent>
       </Dialog>
 
-      {/* Ozow Modal */}
-      <Dialog open={showOzowModal} onOpenChange={setShowOzowModal}>
+      {/* PayPal Modal */}
+      <Dialog open={showPaypalModal} onOpenChange={setShowPaypalModal}>
         <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>
-            <DialogTitle className="text-center">Ozow Payment</DialogTitle>
+            <DialogTitle className="text-center">Pay with PayPal</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col items-center gap-6">
-            <img
-              src="https://i.postimg.cc/7YGdfMLb/6491490c213c45a9d600d387-ozow-small-xs.png"
-              alt="Ozow"
-              className="h-16 object-contain"
-            />
-            <div className="text-center">
-              <p className="text-gray-700 mb-4">
-                We are still integrating an Ozow gateway. We'll have this available soon!
-              </p>
-              <p className="text-sm text-gray-600">
-                In the meantime, please use one of our other payment methods.
-              </p>
-            </div>
+            <div id={`paypal-container-${paypalHostedId}`} className="w-full"></div>
+            <p className="text-gray-700 text-center">
+              Complete your donation using PayPal.
+            </p>
             <Button
-              onClick={() => setShowOzowModal(false)}
+              onClick={() => setShowPaypalModal(false)}
               className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
             >
               Close

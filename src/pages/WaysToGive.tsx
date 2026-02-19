@@ -462,7 +462,7 @@ export function WaysToGive() {
           <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
             <h2 className="text-2xl text-gray-900 mb-4">Give {donationModal}</h2>
             <p className="text-gray-700 mb-6">
-              Thank you for choosing to give {donationModal}. We're currently setting up PayPal and Ozow payment options.
+              Thank you for choosing to give {donationModal}. We're currently setting up PayPal payment option.
             </p>
             <p className="text-gray-600 text-sm mb-6">
               In the meantime, you can donate through our Bank Transfer or Donate Online options above.

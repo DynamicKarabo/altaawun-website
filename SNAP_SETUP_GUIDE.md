@@ -59,10 +59,36 @@ backend that calls SnapScan’s merchant API, but that’s optional.
 * Add donor metadata by signing requests on a backend and querying the Snap API.
 * Automatically poll your database/API to detect when the payment has cleared
   and show the “thank you” message without manual interaction.
-* Implement an `ozow` helper similar to the Snap functionality if you take
-  Ozow as well.
+* Add a similar helper for any other gateway you support (e.g. PayPal – see
+  `PAYPAL_SETUP_GUIDE.md`).
+
+## 6. After you have SnapScan configured
+
+Once your Snap ID is in place and the site is deployed:
+
+1. Do a full build (`npm run build`) so the new configuration is baked in.
+2. Deploy the updated `build/` (or `dist/`) folder to your hosting provider.
+3. On the live site, navigate to **Donate** and choose an amount.
+4. Click **Payshap** – the modal will show a QR code and a link pointing at
+   `https://app.snapscan.io/merchant/<your-id>?amount=XX`. You can scan this
+   with a phone or tap the link to open the SnapScan app.
+5. Complete the transaction in SnapScan. It will appear in your Snap merchant
+   dashboard immediately.
+6. Return to the site; the thank‑you UI will show thanks or you can tell
+   donors to click “Make Another Donation” to reset the form.
+
+This flow requires no backend at all; the amount and snap ID are encoded in the
+URL/QR. If you ever need to verify payments you can build a small API that
+queries SnapScan’s merchant endpoint, but at the simplest level nothing more is
+needed.
+
+### Adding other gateways
+
+You can support additional payment methods by adding new modals/handlers to
+`Donate.tsx` and, if needed, configuration files analogous to
+`snap.ts`. For PayPal in particular there is a separate guide (`PAYPAL_SETUP_GUIDE.md`) that explains how to drop the SDK script into the page and render a hosted button.
 
 ---
 
 Once configured, donors can choose the Payshap option and enjoy a seamless
-SnapScan experience. Happy giving!"}
+SnapScan experience. Happy giving!}

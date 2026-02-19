@@ -104,8 +104,7 @@ export function Homepage() {
                 </Button>
                 <Button asChild
                   size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white/10"
+                  className="bg-emerald-50 text-emerald-900 hover:bg-emerald-100 border border-emerald-100"
                 >
                   <Link to="/values">Our Philosophy</Link>
                 </Button>
@@ -321,8 +320,7 @@ export function Homepage() {
               </Button>
               <Button asChild
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10"
+                className="bg-emerald-600 text-white hover:bg-emerald-700"
               >
                 <Link to="/get-involved">Volunteer With Us</Link>
               </Button>

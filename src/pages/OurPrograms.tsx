@@ -263,12 +263,7 @@ export function OurPrograms() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <a
-              href="mailto:programs@altaawunfial.org.za"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#19586d] rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              Contact Our Programs Team
-            </a>
+            {/* Contact Our Programs Team button removed per request */}
           </motion.div>
         </div>
       </section>

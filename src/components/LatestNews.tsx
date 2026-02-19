@@ -1,6 +1,5 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 
@@ -70,15 +69,7 @@ export function LatestNews() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Button
-            variant="outline"
-            className="border-[#19586d] text-[#19586d] hover:bg-[#19586d]/5"
-          >
-            View All News & Updates
-            <ArrowRight className="ml-2" size={18} />
-          </Button>
-        </div>
+        {/* Removed "View All News & Updates" button per design update */}
       </div>
     </section>
   );

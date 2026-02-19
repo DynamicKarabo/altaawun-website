@@ -417,12 +417,7 @@ export function WaysToGive() {
                 <p className="text-gray-700 mb-4">
                   Partner with us for CSI initiatives, employee engagement programs, and collaborative community projects.
                 </p>
-                <a
-                  href="mailto:partnerships@altaawunfial.org.za"
-                  className="text-emerald-600 hover:underline"
-                >
-                  Contact our partnerships team →
-                </a>
+                {/* Contact link removed per request */}
               </CardContent>
             </Card>
 
@@ -432,12 +427,7 @@ export function WaysToGive() {
                 <p className="text-gray-700 mb-4">
                   Create a lasting impact through planned giving, bequests, and estate planning.
                 </p>
-                <a
-                  href="mailto:info@altaawunfial.org.za"
-                  className="text-emerald-600 hover:underline"
-                >
-                  Learn about legacy options →
-                </a>
+                {/* Legacy options link removed per request */}
               </CardContent>
             </Card>
           </div>

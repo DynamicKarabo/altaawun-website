@@ -131,7 +131,14 @@ PAYFAST_RETURN_URL=https://your-domain.com/donate
 PAYFAST_CANCEL_URL=https://your-domain.com/donate
 PAYFAST_NOTIFY_URL=https://your-domain.com/api/payfast-notify
 NEXT_PUBLIC_PAYFAST_URL=https://www.payfast.co.za/eng/process
+
+# SnapScan (Payshap) variables (optional - enable after you have a snap ID)
+VITE_SNAP_ENABLED=true
+VITE_SNAP_ID=your_snap_id_here
 ```
+
+(see `SNAP_SETUP_GUIDE.md` for instructions on enabling the Payshap/SnapScan
+option once you have a valid Snap ID)
 
 **To get PayFast credentials:**
 1. Log in to PayFast.io

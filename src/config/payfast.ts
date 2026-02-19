@@ -1,9 +1,9 @@
 export const payfastConfig = {
-    merchantId: '10000100', // Default Sandbox Merchant ID
-    merchantKey: '46f0cd694581a', // Default Sandbox Merchant Key
-    passPhrase: '', // Leave empty for sandbox
-    sandbox: true, // Set to false for production
-    returnUrl: 'https://altaawunfial.org.za/success', // Update with your actual domain
-    cancelUrl: 'https://altaawunfial.org.za/cancel', // Update with your actual domain
-    notifyUrl: 'https://altaawunfial.org.za/notify', // Update with your actual domain
+    merchantId: import.meta.env.VITE_PAYFAST_MERCHANT_ID || '10000100',
+    merchantKey: import.meta.env.VITE_PAYFAST_MERCHANT_KEY || '46f0cd694581a',
+    passPhrase: import.meta.env.VITE_PAYFAST_PASSPHRASE || '',
+    sandbox: import.meta.env.VITE_PAYFAST_SANDBOX === 'false' ? false : true,
+    returnUrl: import.meta.env.VITE_PAYFAST_RETURN_URL || 'https://altaawunfial.org.za/success',
+    cancelUrl: import.meta.env.VITE_PAYFAST_CANCEL_URL || 'https://altaawunfial.org.za/cancel',
+    notifyUrl: import.meta.env.VITE_PAYFAST_NOTIFY_URL || 'https://altaawunfial.org.za/notify',
 };

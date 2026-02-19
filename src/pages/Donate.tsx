@@ -4,8 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SEO } from '@/components/SEO';
+
+// configuration helpers
+import { snapConfig } from '@/config/snap';
+import { payfastConfig } from '@/config/payfast';
 
 export function Donate() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -15,6 +19,10 @@ export function Donate() {
   const [donationComplete, setDonationComplete] = useState(false);
   const [showPayshapModal, setShowPayshapModal] = useState(false);
   const [showOzowModal, setShowOzowModal] = useState(false);
+
+  // SnapScan state
+  const [snapLink, setSnapLink] = useState('');
+  const [snapQrSrc, setSnapQrSrc] = useState('');
 
   const presetAmounts = [100, 250, 500, 1000, 2500, 5000];
 
@@ -54,10 +62,8 @@ export function Donate() {
     }
   ];
 
-  // PayFast Configuration
-  const merchantId = '10000100'; // Replace with your Merchant ID
-  const merchantKey = '46f0cd694581a'; // Replace with your Merchant Key
-  const isSandbox = true;
+  // PayFast configuration values (pulled from config file or environment)
+  const { merchantId, merchantKey, sandbox: isSandbox } = payfastConfig;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,7 +71,7 @@ export function Donate() {
 
     if (!amount) return;
 
-    // Construct PayFast URL
+    // Construct PayFast URL (default donation route)
     const baseUrl = isSandbox ? 'https://sandbox.payfast.co.za/eng/process' : 'https://www.payfast.co.za/eng/process';
 
     // Create a hidden form and submit it
@@ -100,6 +106,24 @@ export function Donate() {
     if (customAmount) return parseFloat(customAmount);
     return selectedAmount || 0;
   };
+
+  // update snap link/QR whenever amount or config changes
+  useEffect(() => {
+    if (!snapConfig.enabled || !snapConfig.snapId) {
+      setSnapLink('');
+      setSnapQrSrc('');
+      return;
+    }
+    const amt = getCurrentAmount();
+    const url = `https://app.snapscan.io/merchant/${snapConfig.snapId}` +
+      (amt ? `?amount=${amt.toFixed(2)}` : '');
+    setSnapLink(url);
+    setSnapQrSrc(
+      `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+        url
+      )}`
+    );
+  }, [selectedAmount, customAmount, snapConfig.snapId, snapConfig.enabled]);
 
   if (donationComplete) {
     return (
@@ -454,10 +478,18 @@ export function Donate() {
                         <div className="text-sm text-gray-900">Card Payment</div>
                       </div>
 
-                      {/* Payshap Option */}
+                                      {/* Payshap (SnapScan) Option */}
                       <button
                         type="button"
-                        onClick={() => setShowPayshapModal(true)}
+                        disabled={!snapConfig.enabled || !snapConfig.snapId}
+                        title={!snapConfig.enabled || !snapConfig.snapId ? 'Configure Payshap to enable' : ''}
+                        onClick={() => {
+                          if (snapConfig.enabled && snapConfig.snapId) {
+                            setShowPayshapModal(true);
+                          } else {
+                            alert('Payshap has not been configured yet.');
+                          }
+                        }}
                         className="p-4 rounded-lg border-2 border-gray-200 hover:border-gray-300 transition-colors flex flex-col items-center justify-center cursor-pointer"
                       >
                         <img
@@ -603,31 +635,40 @@ export function Donate() {
         </div>
       </section>
 
-      {/* Payshap Modal */}
+      {/* Payshap Modal (SnapScan) */}
       <Dialog open={showPayshapModal} onOpenChange={setShowPayshapModal}>
         <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>
-            <DialogTitle className="text-center">Payshap Payment</DialogTitle>
+            <DialogTitle className="text-center">Pay with SnapScan</DialogTitle>
           </DialogHeader>
           <div className="flex flex-col items-center gap-6">
-            <img
-              src="https://i.postimg.cc/mD91P5K0/output-onlinepngtools.png"
-              alt="Payshap"
-              className="h-16 object-contain"
-            />
-            <div className="text-center">
-              <p className="text-gray-700 mb-4">
-                We are still integrating a Payshap gateway. We'll have this available soon!
-              </p>
-              <p className="text-sm text-gray-600">
-                In the meantime, please use one of our other payment methods.
-              </p>
-            </div>
+            {snapQrSrc ? (
+              <img
+                src={snapQrSrc}
+                alt="Scan with SnapScan"
+                className="h-40 object-contain"
+              />
+            ) : (
+              <div className="h-40 w-40 flex items-center justify-center bg-gray-100">
+                <span className="text-gray-500">Select an amount</span>
+              </div>
+            )}
+
+            <p className="text-gray-700 text-center">
+              Open the SnapScan app or scan the QR code to complete your payment.
+            </p>
+
             <Button
-              onClick={() => setShowPayshapModal(false)}
+              onClick={() => {
+                if (snapLink) {
+                  window.open(snapLink, '_blank');
+                  setDonationComplete(true);
+                }
+              }}
+              disabled={!snapLink}
               className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
             >
-              Close
+              Open in SnapScan
             </Button>
           </div>
         </DialogContent>
